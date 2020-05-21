@@ -24,7 +24,10 @@ class CreatePlatosTable extends Migration
             $table->timestamps();
         });
         Schema::table('ingredientes',function (Blueprint $table){
-            $table->foreign('plato_id')->references('id')->on('productos');
+            $table->foreign('plato_id')->references('id')->on('platos');
+        });
+        Schema::table('platos_pedidos',function(Blueprint $table){
+            $table->foreign('plato_id')->references('id')->on('platos');
         });
     }
 
@@ -37,6 +40,9 @@ class CreatePlatosTable extends Migration
     {
         Schema::table('ingredientes',function (Blueprint $table){
             $table->dropForeign('ingredientes_plato_id_foreign');
+        });
+        Schema::table('platos_pedidos',function (Blueprint $table){
+            $table->dropForeign('platos_pedidos_plato_id_foreign');
         });
         Schema::dropIfExists('platos');
     }

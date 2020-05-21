@@ -14,7 +14,7 @@ class CreatePlatosPedidosTable extends Migration
     public function up()
     {
         Schema::create('platos_pedidos', function (Blueprint $table) {
-            $table->foreignId('platos_id');
+            $table->foreignId('plato_id');
             $table->foreignId('pedidos_id');
             $table->foreign('pedidos_id')->references('id')->on('pedidos');
         });
