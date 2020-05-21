@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class Usuarios extends Authenticatable
+class User extends Authenticatable
 {
     use Notifiable;
+    protected $table="usuarios";
 
     /**
      * The attributes that are mass assignable.
@@ -36,4 +37,16 @@ class Usuarios extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function establecimiento()
+    {
+        return $this->belongsTo('App\Establecimientos');
+    }
+    public function rol()
+    {
+        return $this->belongsTo('App\Roles');
+    }
+    public function pedidos()
+    {
+        return $this->hasMany('App\Pedidos');
+    }
 }
