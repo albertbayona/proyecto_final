@@ -4,11 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Pedidos extends Model
+class Rol extends Model
 {
-    //
+    protected $table = 'roles';
+
     public function usuarios()
     {
-        return $this->belongsTo('App\Users');
+        return $this->hasMany('App\Users');
     }
 }

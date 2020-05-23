@@ -4,11 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Proveedores extends Model
+class Proveedor extends Model
 {
     //
+    protected $table = 'proveedores';
+
     public function producto()
     {
-        return $this->belongsTo('App\Productos');
+        return $this->belongsTo('App\Producto');
     }
 }

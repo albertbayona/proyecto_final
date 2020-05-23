@@ -39,14 +39,14 @@ class User extends Authenticatable
     ];
     public function establecimiento()
     {
-        return $this->belongsTo('App\Establecimientos');
+        return $this->belongsTo('App\establecimientos');
     }
     public function rol()
     {
-        return $this->belongsTo('App\Roles');
+        return $this->belongsTo('App\Rol');
     }
     public function pedidos()
     {
-        return $this->hasMany('App\Pedidos');
+        return $this->hasMany('App\Pedido');
     }
 }

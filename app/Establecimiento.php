@@ -4,11 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Establecimientos extends Model
+class Establecimiento extends Model
 {
+    protected $table = 'establecimientos';
+
     public function empresa()
     {
-        return $this->belongsTo('App\Empresas');
+        return $this->belongsTo('App\Empresa');
     }
     public function usuarios()
     {
@@ -16,6 +18,6 @@ class Establecimientos extends Model
     }
     public function platos()
     {
-        return $this->hasMany('App\Platos');
+        return $this->hasMany('App\Plato');
     }
 }

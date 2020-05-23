@@ -17,6 +17,7 @@ class CreatePlatosPedidosTable extends Migration
             $table->foreignId('plato_id');
             $table->foreignId('pedidos_id');
             $table->foreign('pedidos_id')->references('id')->on('pedidos');
+            $table->primary(['plato_id', 'pedidos_id']);
         });
     }
 
