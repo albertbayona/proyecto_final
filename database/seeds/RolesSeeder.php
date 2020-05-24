@@ -12,18 +12,26 @@ class RolesSeeder extends Seeder
      */
     public function run()
     {
-        //
+//        $faker = Faker\Factory::create();
+//        $faker->dateTime($max = 'now');
         DB::table('roles')->insert([
-            'nombre' => 'empresa'
+            'nombre' => 'empresa',
+            'created_at' => date("Y-m-d H:i:s")
         ]);
+
         DB::table('roles')->insert([
-            'nombre' => 'gestor'
+            'nombre' => 'gestor',
+            'created_at' => date("Y-m-d H:i:s")
         ]);
+
         DB::table('roles')->insert([
-            'nombre' => 'camarero'
+            'nombre' => 'camarero',
+            'created_at' => date("Y-m-d H:i:s")
         ]);
+
         DB::table('roles')->insert([
-            'nombre' => 'cocinero'
+            'nombre' => 'cocinero',
+            'created_at' => date("Y-m-d H:i:s")
         ]);
     }
 }

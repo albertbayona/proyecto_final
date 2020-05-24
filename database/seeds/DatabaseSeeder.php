@@ -12,14 +12,36 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->truncateTables([
-            'roles'
+            'roles',
+            'empresas',
+            'establecimientos',
+            'usuarios',
+            'categorias',
+            'platos',
+            'pedidos',
+            'platos_pedidos',
+            'proveedores',
+            'productos',
+            'ingredientes'
         ]);
-         $this->call(RolesSeeder::class);
+         $this->call([
+             RolesSeeder::class,
+             EmpresaSeeder::class,
+             EstablecimientoSeeder::class,
+             UserSeeder::class,
+             CategoriaSeeder::class,
+             PlatoSeeder::class,
+             PedidoSeeder::class,
+             PlatoPedidoSeeder::class,
+             ProveedorSeeder::class,
+             ProductoSeeder::class,
+             IngredienteSeeder::class
+         ]);
     }
     public function truncateTables(array $tablas){
         DB::statement('SET FOREIGN_KEY_CHECKS = 0;');
         foreach ($tablas as $tabla){
-            DB::table($tabla)->truncate();//vacia la tabla y las sentecias sql lo permiten
+            DB::table($tabla)->truncate();
         }
         DB::statement('SET FOREIGN_KEY_CHECKS = 1;');
     }

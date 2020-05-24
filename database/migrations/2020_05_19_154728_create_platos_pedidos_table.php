@@ -15,9 +15,10 @@ class CreatePlatosPedidosTable extends Migration
     {
         Schema::create('platos_pedidos', function (Blueprint $table) {
             $table->foreignId('plato_id');
-            $table->foreignId('pedidos_id');
-            $table->foreign('pedidos_id')->references('id')->on('pedidos');
-            $table->primary(['plato_id', 'pedidos_id']);
+            $table->foreignId('pedido_id');
+            $table->smallInteger('cantidad');
+            $table->foreign('pedido_id')->references('id')->on('pedidos');
+            $table->primary(['plato_id', 'pedido_id']);
         });
     }
 

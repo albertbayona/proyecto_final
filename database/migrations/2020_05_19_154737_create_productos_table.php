@@ -18,7 +18,7 @@ class CreateProductosTable extends Migration
             $table->string('nombre');
             $table->smallInteger('en_stock');
             $table->smallInteger('minimo_recomendable')->comment('Cantidad minina del producto que se deberia tener en el inventario');
-            $table->string('url_foto');
+            $table->string('url_foto')->nullable();
             $table->timestamps();
         });
         Schema::table('ingredientes',function (Blueprint $table){

@@ -17,8 +17,9 @@ class CreateProveedoresTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('empresa');
-            $table->string('telefono');
-            $table->string('email')->comment('un mismo proveedor puede repetirse si esta disponible para diferentes empresas');
+//            son nullables para que asi lo pueda rellenar cuando mejor le vaya y si tiene el telefono no tiene por que tener el mail y viceversa
+            $table->string('telefono')->nullable();
+            $table->string('email')->comment('un mismo proveedor puede repetirse si esta disponible para diferentes empresas')->nullable();
             $table->timestamps();
         });
         Schema::table('productos',function (Blueprint $table){

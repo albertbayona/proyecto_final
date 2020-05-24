@@ -16,9 +16,9 @@ class CreatePlatosTable extends Migration
         Schema::create('platos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('categoria');
             $table->decimal('precio',6,2);
-            $table->string('url_foto');
+            $table->string('url_foto')->nullable();
+            $table->foreignId('categoria_id');
             $table->foreignId('establecimiento_id');
             $table->foreign('establecimiento_id')->references('id')->on('establecimientos');
             $table->timestamps();
