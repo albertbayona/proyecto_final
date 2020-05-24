@@ -13,17 +13,19 @@ class CreateEmpresasTable extends Migration
      */
     public function up()
     {
+        //Asi en el momento de registrarse no hace falta que rellene demasiados campos
         Schema::create('empresas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
             $table->string('NIF')->unique();
-            $table->string('pais');
-            $table->string('provincia');
-            $table->string('municipio');
-            $table->integer('codigo_postal');
-            $table->string('calle');
+            $table->string('pais')->nullable();
+            $table->string('provincia')->nullable();
+            $table->string('municipio')->nullable();
+            $table->integer('codigo_postal')->nullable();
+            $table->string('calle')->nullable();
             $table->timestamps();
         });
+
     }
 
     /**

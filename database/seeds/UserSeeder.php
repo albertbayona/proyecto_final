@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
         $faker = Faker\Factory::create();
 
         DB::table('usuarios')->insert([
-            'name' => 'Bayona Corp.',
+            'nombre' => 'Bayona Corp.',
             'email' => 'empresa@example.com',
             'password' => bcrypt('asdasdasd'),
             'rol_id' => 1,
@@ -25,7 +25,7 @@ class UserSeeder extends Seeder
         ]);
 
         DB::table('usuarios')->insert([
-            'name' => $faker->firstName,
+            'nombre' => $faker->firstName,
             'apellidos' => $faker->lastName,
             'email' => 'gestor@example.com',
             'password' => bcrypt('asdasdasd'),
@@ -36,7 +36,7 @@ class UserSeeder extends Seeder
 
         for ($i = 1; $i <= 3; $i++){
             DB::table('usuarios')->insert([
-                'name' => $faker->firstName,
+                'nombre' => $faker->firstName,
                 'apellidos' => $faker->lastName,
                 'email' => 'camarero'.$i.'@example.com',
                 'password' => bcrypt('asdasdasd'),
@@ -47,7 +47,7 @@ class UserSeeder extends Seeder
         }
         for ($i = 1; $i <= 2; $i++){
             DB::table('usuarios')->insert([
-                'name' => $faker->firstName,
+                'nombre' => $faker->firstName,
                 'apellidos' => $faker->lastName,
                 'email' => 'cocinero'.$i.'@example.com',
                 'password' => bcrypt('asdasdasd'),

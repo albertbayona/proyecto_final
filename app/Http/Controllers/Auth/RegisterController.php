@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Empresa;
+use App\Establecimiento;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\User;
@@ -49,9 +51,12 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'nombre' => ['required', 'string', 'max:255'],
+            'nombre_establecimiento' => ['required', 'string', 'max:255'],
+            'NIF' => ['required','string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:usuarios'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -64,10 +69,24 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        /*********AQUI CREAMOS LA EMPRESA*************/
+//        dd($data);
+        $empresa = Empresa::create([
+            'NIF' => $data['NIF'],
+            'nombre' => $data['nombre']
+        ]);
+        $establecimiento = Establecimiento::create([
+            'nombre' => $data['nombre_establecimiento'],
+            'empresa_id' => $empresa->id,
+        ]);
+//        dd($establecimiento->id);
+        /**********************/
         return User::create([
-            'name' => $data['name'],
+            'nombre' => $data['nombre'],
             'email' => $data['email'],
+            'establecimiento_id' => $establecimiento->id,
             'password' => Hash::make($data['password']),
+            'rol_id' => 1
         ]);
     }
 }
