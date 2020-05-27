@@ -39,7 +39,7 @@ class User extends Authenticatable
     ];
     public function establecimiento()
     {
-        return $this->belongsTo('App\establecimientos');
+        return $this->belongsTo('App\Establecimiento');
     }
     public function rol()
     {

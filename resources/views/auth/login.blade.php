@@ -6,12 +6,10 @@
         <div class="logo-naranja center height100">Logo</div>
         <form method="POST" class="form-login" action="{{ route('login') }}">
             @csrf
-
-            <div class="form-group row">
-                <label for="email" class="">{{ __('E-Mail Address') }}</label>
-
-                <div class="col-md-6">
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+            <div>
+                <label for="email" >{{ __('E-Mail Address') }}</label>
+                <div >
+                    <input id="email" type="email" class="width100 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                     @error('email')
                         <span class="invalid-feedback" role="alert">
@@ -21,11 +19,11 @@
                 </div>
             </div>
 
-            <div class="form-group row">
-                <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+            <div>
+                <label for="password" >{{ __('Password') }}</label>
 
-                <div class="col-md-6">
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                <div>
+                    <input id="password" type="password" class="width100 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                     @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -35,26 +33,26 @@
                 </div>
             </div>
 
-            <div class="form-group row">
-                <div class="">
-                    <div class="form-check">
-                        <input class="" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+            <div>
+                <div >
+                    <div >
+                        <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                        <label class="" for="remember">
+                        <label for="remember">
                             {{ __('Remember Me') }}
                         </label>
                     </div>
                 </div>
             </div>
 
-            <div class="form-group row ">
-                <div class="">
-                    <button type="submit" class="btn btn-primary btn-login">
+            <div >
+                <div >
+                    <button type="submit" class="btn-primary btn-login arriba20">
                         {{ __('Login') }}
                     </button>
 
                     @if (Route::has('password.request'))
-                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                        <a class="anchor-oscura" href="{{ route('password.request') }}">
                             {{ __('Forgot Your Password?') }}
                         </a>
                     @endif

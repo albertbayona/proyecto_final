@@ -20,5 +20,8 @@ class Plato extends Model
     {
         return $this->belongsToMany(Producto::class,'ingredientes','plato_id','producto_id');
     }
+    public function categoria(){
+        return $this->belongsTo(Categoria::class);
+    }
     // recordar que esta relacionado con las dos tablas intermedias ESPERANDO CORREO DE TONI
 }

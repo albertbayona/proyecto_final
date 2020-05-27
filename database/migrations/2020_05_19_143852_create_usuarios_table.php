@@ -28,8 +28,6 @@ class CreateUsuariosTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-        //$table->bigInteger('rol_id')->unsigned();
-        //            $table->bigInteger('establecimiento_id')->unsigned();
 
     }
 

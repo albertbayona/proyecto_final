@@ -15,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
+//Route::get('/prueba',function(){
+//    $user = \App\User::find(1);
+//    dd($user->establecimiento->nombre);
+//});
 
 Auth::routes();
 
