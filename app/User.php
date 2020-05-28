@@ -49,4 +49,20 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Pedido');
     }
+
+    public function rolAutorizado($roles)
+    {
+        if ($this->tieneRol($roles)) {
+            return true;
+        }
+        abort(401, 'Accion no autorizada');
+    }
+
+    public function tieneRol($rol)
+    {
+        if ($this->rol()->where('nombre', $rol)->first()) {
+            return true;
+        }
+        return false;
+    }
 }

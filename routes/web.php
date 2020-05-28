@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-})->name('welcome');
+})->name('welcome')->middleware('guest');
+
+Route::get('', 'HomeController@empresa')->middleware('rol:empresa');
+
 
 //Route::get('/prueba',function(){
 //    $user = \App\User::find(1);

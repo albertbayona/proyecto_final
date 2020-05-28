@@ -69,18 +69,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        /*********AQUI CREAMOS LA EMPRESA*************/
-//        dd($data);
         $empresa = Empresa::create([
             'NIF' => $data['NIF'],
             'nombre' => $data['nombre']
         ]);
+
         $establecimiento = Establecimiento::create([
             'nombre' => $data['nombre_establecimiento'],
             'empresa_id' => $empresa->id,
         ]);
-//        dd($establecimiento->id);
-        /**********************/
+
         return User::create([
             'nombre' => $data['nombre'],
             'email' => $data['email'],
