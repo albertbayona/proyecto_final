@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="center">
+    <div class="center arriba20">
         <div class="card-login ">
             <div class="logo-naranja center height100">Logo</div>
             @if (session('status'))

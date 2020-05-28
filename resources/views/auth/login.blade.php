@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="center">
+<div class="center arriba20">
     <div class="card-login " >
         <div class="logo-naranja center height100">Logo</div>
         <form method="POST" class="form-login" action="{{ route('login') }}">
@@ -18,13 +18,11 @@
                     @enderror
                 </div>
             </div>
-
             <div>
                 <label for="password" >{{ __('Password') }}</label>
 
                 <div>
                     <input id="password" type="password" class="width100 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
                     @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

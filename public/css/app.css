@@ -2,9 +2,10 @@
     --blanco: #F8F8F8;
     --blanco-fondo: #F3F3F3;
     --gris: #A7A7A7;
-    --negro: #707070;
+    --gris-oscuro: #707070;
+    --negro: #3a3a3a;
     --beige-cancelado: #E1D3C7;
-    --beige: #FFEAD8;
+    --naranja-claro-blanco: #FFEAD8;
     --naranja-claro: #FFCDA1;
     --naranja: #FEAE69;
     --naranja-chillon: #FF973D;
@@ -24,7 +25,9 @@ body {
     background-color: var(--blanco-fondo);
     display: flex;
     flex-direction: column;
+    color:var(--negro);
     font-family: var(--normal-font);
+    height: 100vh;
 
 }
 main{
@@ -32,8 +35,8 @@ main{
 }
 
 nav {
-    background-color: var(--naranja);
-    margin-bottom: 20px;
+    background-color: var(--naranja-claro);
+    /*margin-bottom: 20px;*/
 
 }
 
@@ -50,6 +53,7 @@ input[type="search"]::-webkit-search-decoration {
     background-color: var(--blanco);
     border: none;
     border-bottom: 2px solid var(--naranja-claro);
+    color:var(--negro);
 }
 ul {
     list-style-type: none;
@@ -90,7 +94,7 @@ a:visited {
     padding-right: 10px;
 }
 .nav-item:hover{
-    background-color: var(--naranja-chillon);
+    background-color: var(--naranja);
     cursor: pointer;
 }
 .logo-naranja, .logo-blanco {
@@ -167,7 +171,10 @@ a:visited {
 .height100 {
     height: 100%;
 }
-
+.center-align{
+    display: flex;
+    align-items: center;
+}
 .height-c {
     display: flex;
     align-items: center;
@@ -181,11 +188,41 @@ a:visited {
 .arriba20{
     margin-top: 20px;
 }
-
+.abajo5{
+    margin-bottom: 5px;
+}
 .titulo {
     font-family: var(--titulo-font);
 }
 .letra-blanca{
     color:var(--blanco);
 }
+.welcome-background{
+    background-image: url('../images/fondo_borroso.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.welcome-btn{
+    height: 300px;
+    width: 300px;
+    background-color: var(--naranja-chillon);
+    border-radius: 50%;
+}
+.welcome-btn-text{
+    height: 100%;
+    display:grid;
+    grid-row-gap: 5px;
+    grid-template-rows: repeat(4,1fr);
+    color: var(--blanco-fondo);
+}
 
+.welcome-btn-text h3{
+    font-size: 30px;
+    text-align: center;
+    grid-row-start: 2;
+}
+.welcome-btn-text p{
+    text-align: center;
+    grid-row-start: 3;
+
+}

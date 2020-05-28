@@ -7,7 +7,7 @@
         <a href="{{route('welcome')}}" class="logo-blanco nav-logo">Logo</a>
     @else
         <div class="logo-blanco nav-logo">Logo</div>
-@endguest
+    @endguest
 <!-- Right Side Of Navbar -->
     <ul class="derecha height100 height-c">
         <!-- Authentication Links -->
@@ -29,12 +29,11 @@
 
                 <a class="post" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
+                    document.getElementById('logout-form').submit();">
                     {{ __('Logout') }}
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
-
                 </form>
             </li>
         @endguest
