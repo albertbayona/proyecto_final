@@ -137,23 +137,31 @@ a:visited {
 }
 
 .btn-primary {
+    display: flex;
+    align-items: center;
     border: none;
     background-color: var(--naranja);
     color:var(--blanco-fondo);
     font-weight: 600;
-    height: 84px;
     border-radius: 42px;
+    height: auto;
+    min-height: 40px;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .btn-login {
     width: 100%;
     height: auto;
     min-height: 40px;
-}
 
+}
+.anyadir{
+    font-size: 50px;
+}
 .center {
     display: flex;
     justify-content: center;
@@ -185,6 +193,15 @@ a:visited {
 .derechaP20{
     padding-right: 20px;
 }
+.izquierdaM20{
+    margin-left: 20px;
+}
+.izquierdaM40{
+    margin-left: 40px;
+}
+.izquierdaP20{
+    padding-left: 20px;
+}
 .arriba20{
     margin-top: 20px;
 }
@@ -192,7 +209,9 @@ a:visited {
     margin-bottom: 5px;
 }
 .titulo {
+    color: var(--gris-oscuro);
     font-family: var(--titulo-font);
+    font-size: 30px;
 }
 .letra-blanca{
     color:var(--blanco);
@@ -207,6 +226,11 @@ a:visited {
     width: 300px;
     background-color: var(--naranja-chillon);
     border-radius: 50%;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+.welcome-btn:hover{
+    transform: scale(1.2);
 }
 .welcome-btn-text{
     height: 100%;
@@ -220,9 +244,51 @@ a:visited {
     font-size: 30px;
     text-align: center;
     grid-row-start: 2;
+    transition: 0.3s;
 }
-.welcome-btn-text p{
+.welcome-btn-text a{
     text-align: center;
     grid-row-start: 3;
+}
+.main-menu{
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(3,33vh);
+    grid-template-rows: 33vh;
+    grid-column-gap: 5vw;
+    justify-content: center;
+    align-content:center;
+}
+.main-btn{
+    background-color: var(--naranja-claro-blanco);
+    transition: 0.3s;
+}
+.main-btn:hover{
+    transform: scale(1.2);
+}
+.main-svg{
+    margin-top: 5px;
+    height: 80%;
+    fill:var(--negro);
+}
+.text-center{
+    text-align: center;
+}
+.arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right:22px solid var(--naranja);
+    border-radius: 5px;
+}
 
+.table{
+
+}
+.row{
+
+}
+.albert{
+    border: red 2px solid;
 }

@@ -4,7 +4,7 @@
 <body>
 <nav class="navbar">
     @guest
-        <a href="{{route('welcome')}}" class="logo-blanco nav-logo">Logo</a>
+        <a href="{{ route('welcome') }}" class="logo-blanco nav-logo">Logo</a>
     @else
         <div class="logo-blanco nav-logo">Logo</div>
     @endguest

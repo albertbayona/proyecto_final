@@ -11,14 +11,20 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script>
-        $(".nav-item").click(function(){
-            if ($( "a.post" ).length ){//comprobar que existe
-                $(this).find("a.post").click();
-            }else{
+        $( document ).ready(function() {
+            $(".nav-item").click(function(){
+                if ($( "a.post" ).length ){//comprobar que existe
+                    $(this).find("a.post").click();
+                }else{
+                    window.location=$(this).find("a").attr("href");
+                }
+                return false;
+            });
+            $(".link").click(function() {
                 window.location=$(this).find("a").attr("href");
-            }
-            return false;
+            });
         });
+
     </script>
 
     <!-- Fonts -->
