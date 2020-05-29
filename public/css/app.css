@@ -21,7 +21,6 @@
 }
 
 body {
-
     background-color: var(--blanco-fondo);
     display: flex;
     flex-direction: column;
@@ -46,7 +45,7 @@ nav {
 input[type="text"],
 input[type="email"],
 input[type="password"],
-textarea,
+textarea,select,
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button, input[type="search"], input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
@@ -200,6 +199,13 @@ a:visited {
     margin-left: 40px;
     margin-right: 40px;
 }
+.body-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
 .derechaM20{
     margin-right: 20px;
 }
@@ -299,6 +305,10 @@ a:visited {
 .text-center{
     text-align: center;
 }
+.text-abajo{
+    display: flex;
+    align-items: end;
+}
 .arrow-left {
     width: 0;
     height: 0;
@@ -345,38 +355,152 @@ a:visited {
 .espacio-blanco{
     grid-column: 4;
 }
+
+.card-form{
+    height: 95%;
+    width:98%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    background-color: white;
+}
+.form-resources{
+    display: grid;
+}
+.direction-column{
+    display: flex; flex-direction: column;
+}
 .albert{
     border: red 2px solid;
 }
+/****************GRID USUARIO*********/
+.grid-user {
+    width: 95%;
+    height: 95%;
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    grid-template-rows: 1fr 3.5fr 1fr;
+    gap: 20px 20px;
+    grid-template-areas: "grid-titulo grid-titulo" "formulario imagen" "end-form end-form";
+}
 
+.grid-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px 20px;
+    grid-template-areas: "datos-personales datos-personales datos-personales" "contacto contacto contacto" "datos-empresa datos-empresa datos-empresa";
+    grid-area: formulario;
+}
+
+.grid-datos-personales {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    gap: 10px 20px;
+    grid-template-areas: "grid-d-personal . ." "grid-nombre grid-apellidos grid-apellidos";
+    grid-area: datos-personales;
+}
+
+.grid-nombre { grid-area: grid-nombre; }
+
+.grid-apellidos { grid-area: grid-apellidos; }
+
+.grid-d-personal { grid-area: grid-d-personal; }
+
+.grid-contacto {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    gap: 10px 20px;
+    grid-template-areas: "grid-d-contacto . ." "grid-email grid-email grid-telefono";
+    grid-area: contacto;
+}
+
+.grid-d-contacto { grid-area: grid-d-contacto; }
+
+.grid-email { grid-area: grid-email; }
+
+.grid-telefono { grid-area: grid-telefono; }
+
+.grid-datos-empresa {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    gap: 10px 20px;
+    grid-template-areas: "grid-d-empresa . ." "grid-establecimiento grid-establecimiento grid-rol";
+    grid-area: datos-empresa;
+}
+
+.grid-d-empresa { grid-area: grid-d-empresa; }
+
+.grid-establecimiento { grid-area: grid-establecimiento; }
+
+.grid-rol { grid-area: grid-rol; }
+
+.end-form {
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    grid-template-rows: 1fr;
+    gap: 20px 20px;
+    grid-template-areas: "grid-boton .";
+    grid-area: end-form;
+}
+
+.grid-boton { grid-area: grid-boton; }
+
+.grid-imagen {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr 1fr;
+    gap: 20px 20px;
+    grid-template-areas: "grid-foto" "grid-subir-foto";
+    grid-area: imagen;
+}
+
+.grid-subir-foto { grid-area: grid-subir-foto; }
+
+.grid-foto { grid-area: grid-foto; }
+
+.grid-titulo { grid-area: grid-titulo; }
 
 /********TOOLTIP**********/
-/* Tooltip container */
 .tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    /*border-bottom: 1px dotted black;*/
 }
 
-/* Tooltip text */
 .tooltip .tooltiptext {
     visibility: hidden;
     width: 120px;
-    background-color: black;
+    background-color: #555;
     color: #fff;
     text-align: center;
-    padding: 5px 0;
     border-radius: 6px;
-
-    /* Position the tooltip text - see examples below! */
+    padding: 5px 0;
     position: absolute;
     z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
-    width: 120px;
-    bottom: 100%;
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
     left: 50%;
-    margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }

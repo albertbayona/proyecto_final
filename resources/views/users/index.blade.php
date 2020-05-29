@@ -9,7 +9,7 @@
                 </div>
                 <h3 class="titulo ">Gestion de usuarios</h3>
             </div>
-            <div class="btn-primary btn-anyadir link"><span class="anyadir">+</span><a href="{{route('home')}}">Añadir usuario</a></div>
+            <div class="btn-primary btn-anyadir link"><span class="anyadir">+</span><a href="{{route('users.create')}}">Añadir usuario</a></div>
         </div>
         <div class="table arriba20">
             <div class="th">Usuario</div>
@@ -24,15 +24,22 @@
             <div class="td">{{$user->establecimiento->nombre}}</div>
             <div class="td">{{$user->rol->nombre}}</div>
             <div class="td acciones">
-                <div class="link">
+                <div class="link tooltip">
+                    <span class="tooltiptext">Ver</span>
                     <a href="{{route('users.show',['user' => $user->id])}}"></a>
                     @svg('/svg/interface.svg', 'accion-svg')
                 </div>
-                @svg('/svg/tool.svg', 'accion-svg')
-                @svg('/svg/delete.svg', 'accion-svg')
+                <div class="link tooltip">
+                    <span class="tooltiptext">Editar</span>
+                    <a href="{{route('users.show',['user' => $user->id])}}"></a>
+                    @svg('/svg/tool.svg', 'accion-svg')
+                </div><div class="link tooltip">
+                    <span class="tooltiptext">Borrar</span>
+                    <a href="{{route('users.destroy',['user' => $user->id])}}"></a>
+                    @svg('/svg/delete.svg', 'accion-svg')
+                </div>
             </div>
             @endforeach
-
         </div>
     </div>
 @endsection
