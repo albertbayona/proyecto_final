@@ -31,14 +31,13 @@ class UserController extends Controller
      */
     public function create()
     {
-        $data = [
-            'roles'  => Rol::selectwhere('id','!=',1),//admin
-            'establecimientos'   => 22,
-            'email' => 'r.mobis@rmobis.com'
-        ];
+        $user = User::find(Auth::user()->id);
+        $empresa_id = $user->establecimiento->empresa->id;
+        $establecimientos = Establecimiento::where('empresa_id',$empresa_id)->get();
 
+        $roles = Rol::where('id','!=',1)->get();
 
-        return view('users.create');
+        return view('users.create')->with('roles',$roles)->with('establecimientos',$establecimientos);
     }
 
     /**
@@ -49,6 +48,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'email'=>'required|unique:users',
+        ]);
         $path=$request->file('photo')->store('photos','public');
         User::create(['description'=>$request->description,
             'price'=>$request->price,

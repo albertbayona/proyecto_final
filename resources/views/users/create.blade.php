@@ -39,17 +39,19 @@
                     <div class="grid-datos-empresa">
                         <div class="grid-d-empresa text-abajo"><h3>Datos de contacto</h3></div>
                         <div class="grid-establecimiento  direction-column">
-                            <label for="telefono">Telefono</label>
-                            <select name="telefono" id="telefono">
-                                <option value="AA">AA</option>
-                                <option value="AA">AA</option>
-                                <option value="AA">AA</option>
+                            <label for="establecimiento">Establecimiento</label>
+                            <select name="establecimiento" id="establecimiento">
+                                @foreach($establecimientos as $establecimiento)
+                                <option value="{{$establecimiento['id']}}">{{$establecimiento['nombre']}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <div class="grid-rol direction-column">
                             <label for="rol">Rol</label>
                             <select name="rol" id="rol">
-                                <option value="AA">AA</option>
+                                @foreach($roles as $rol)
+                                    <option value="{{$rol['id']}}">{{$rol['nombre']}}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
