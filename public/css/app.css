@@ -41,7 +41,9 @@ nav {
     left:0;
 
 }
+input[type="file"]{
 
+}
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -462,7 +464,8 @@ a:visited {
 .grid-subir-foto { grid-area: grid-subir-foto; }
 
 .grid-foto { grid-area: grid-foto; }
-
+.grid-foto svg{
+}
 .grid-titulo { grid-area: grid-titulo; }
 
 /********TOOLTIP**********/

@@ -3,7 +3,7 @@
 @section('content')
     <div class="body-form">
         <div class="card-form ">
-            <form class="grid-user" method="POST">
+            <form class="grid-user" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('POST')
                 <div class="grid-titulo height-c">
@@ -55,8 +55,12 @@
                     </div>
                 </div>
                 <div class="grid-imagen">
-                    <div class="grid-subir-foto"></div>
-                    <div class="grid-foto"></div>
+                    <div class="grid-subir-foto">
+                        <input type="file"  name="photo">
+                    </div>
+                    <div class="grid-foto">
+{{--                        @svg('/svg/social.svg', 'accion-svg')--}}
+                    </div>
                 </div>
                 <div class="grid-end-form">
                     <div class="grid-boton ">

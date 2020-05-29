@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Establecimiento;
+use App\Rol;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -30,6 +31,13 @@ class UserController extends Controller
      */
     public function create()
     {
+        $data = [
+            'roles'  => Rol::selectwhere('id','!=',1),//admin
+            'establecimientos'   => 22,
+            'email' => 'r.mobis@rmobis.com'
+        ];
+
+
         return view('users.create');
     }
 
@@ -41,7 +49,12 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $path=$request->file('photo')->store('photos','public');
+        User::create(['description'=>$request->description,
+            'price'=>$request->price,
+            'owner_id'=>$request->owner_id,
+            'photo'=>$path
+        ]);
     }
 
     /**
