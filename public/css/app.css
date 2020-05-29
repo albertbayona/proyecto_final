@@ -37,6 +37,9 @@ main{
 nav {
     background-color: var(--naranja-claro);
     /*margin-bottom: 20px;*/
+    position: sticky;
+    top:0;
+    left:0;
 
 }
 
@@ -76,7 +79,9 @@ a:visited {
     text-decoration-color: var(--negro);
 
 }
-
+.link{
+    cursor: pointer;
+}
 
 .navbar {
     display: grid;
@@ -137,6 +142,7 @@ a:visited {
 }
 
 .btn-primary {
+    justify-content: center;
     display: flex;
     align-items: center;
     border: none;
@@ -151,6 +157,7 @@ a:visited {
     box-shadow: none;
     padding-left: 20px;
     padding-right: 20px;
+
 }
 
 .btn-login {
@@ -160,7 +167,7 @@ a:visited {
 
 }
 .anyadir{
-    font-size: 50px;
+    font-size: 45px;
 }
 .center {
     display: flex;
@@ -187,8 +194,18 @@ a:visited {
     display: flex;
     align-items: center;
 }
+.body{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
 .derechaM20{
     margin-right: 20px;
+}
+.derechaM40{
+    margin-right: 40px;
+
 }
 .derechaP20{
     padding-right: 20px;
@@ -212,6 +229,14 @@ a:visited {
     color: var(--gris-oscuro);
     font-family: var(--titulo-font);
     font-size: 30px;
+}
+.titulo-linia{
+    display:grid;
+    grid-template-columns: 3fr repeat(3,1fr);
+    align-content: baseline;
+}
+.btn-anyadir{
+    grid-column-start: 4;
 }
 .letra-blanca{
     color:var(--blanco);
@@ -284,11 +309,74 @@ a:visited {
 }
 
 .table{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-row-gap: 10px ;
+    grid-template-rows:50px 10px;
+    grid-auto-rows: 50px;
+}
+.th{
+    background-color: white;
+    border-bottom: 5px solid var(--gris);
+    color: var(--gris-oscuro);
+    font-weight: bold;
+    text-align: center;
+    display: grid;
+    align-items: center;
+}
+.td{
+    background-color: white;
+    text-align: center;
+    display: grid;
+    align-items: center;
 
 }
-.row{
-
+.acciones{
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 5px;
+    justify-content: center;
+}
+.accion-svg{
+    width: auto;
+    height: 35px;
+    fill:var(--negro);
+}
+.espacio-blanco{
+    grid-column: 4;
 }
 .albert{
     border: red 2px solid;
+}
+
+
+/********TOOLTIP**********/
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    width: 120px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px; /* Use half of the width (120/2 = 60), to center the tooltip */
 }

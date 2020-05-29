@@ -4,12 +4,12 @@
 <body>
 <nav class="navbar">
     @guest
-        <a href="{{ route('welcome') }}" class="logo-blanco nav-logo">Logo</a>
+        <div class="logo-blanco nav-logo link"><a href="{{ route('welcome') }}" class="logo-blanco nav-logo">Logo</a></div>
     @else
-        <div class="logo-blanco nav-logo">Logo</div>
+        <div class="logo-blanco nav-logo link"><a href="{{ route('home') }}" class="logo-blanco nav-logo">Logo</a></div>
     @endguest
 <!-- Right Side Of Navbar -->
-    <ul class="derecha height100 height-c">
+    <ul class="derecha derechaM40 height100 height-c">
         <!-- Authentication Links -->
         @guest
             <li class="nav-item">

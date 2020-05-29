@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Establecimiento;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -13,7 +16,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('users.index');
+        $empresaID = auth::user()->establecimiento->empresa->id;
+        $establecimientosIDs= Establecimiento::select('id')->where('empresa_id',$empresaID)->get()->toArray();
+//        dd($establecimientosIDs);
+        $users = User::whereIn('establecimiento_id',$establecimientosIDs )->get();
+        return view('users.index',compact("users"));
     }
 
     /**
@@ -45,7 +52,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        return "hola ".$id;
     }
 
     /**
