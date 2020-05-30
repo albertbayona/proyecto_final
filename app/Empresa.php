@@ -17,7 +17,7 @@ class Empresa extends Model
     ];
     public function establecimientos()
     {
-        return $this->hasMany('App\establecimientos');
+        return $this->hasMany('App\establecimiento');
     }
     public function tarjeta()
     {

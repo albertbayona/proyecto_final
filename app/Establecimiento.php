@@ -9,6 +9,7 @@ class Establecimiento extends Model
     protected $table = 'establecimientos';
     protected $fillable = [
         'nombre',
+        'mesas',
         'pais',
         'provincia',
         'municipio',
@@ -22,7 +23,7 @@ class Establecimiento extends Model
     }
     public function usuarios()
     {
-        return $this->hasMany('App\Users');
+        return $this->hasMany('App\User');
     }
     public function platos()
     {

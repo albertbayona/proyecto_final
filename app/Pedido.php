@@ -13,10 +13,10 @@ class Pedido extends Model
     //
     public function usuarios()
     {
-        return $this->belongsTo('App\Users');
+        return $this->belongsTo('App\User');
     }
     public function plato_pedidos()
     {
-        return $this->hasMany('App\Platopedido');
+        return $this->hasMany('App\Plato_pedido');
     }
 }

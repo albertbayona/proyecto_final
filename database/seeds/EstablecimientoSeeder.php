@@ -21,6 +21,7 @@ class EstablecimientoSeeder extends Seeder
             'provincia' => 'barcelona',
             'municipio' => 'viladecans',
             'codigo_postal' => '08840',
+            'mesas'=> 3,
             'calle' => $faker->address,
             'created_at' => date("Y-m-d H:i:s"),
             'empresa_id' => 1

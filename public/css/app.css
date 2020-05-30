@@ -352,7 +352,7 @@ a:visited {
 .accion-svg{
     width: auto;
     height: 35px;
-    fill:var(--negro);
+    fill:var(--gris-oscuro);
 }
 .espacio-blanco{
     grid-column: 4;
@@ -376,6 +376,10 @@ a:visited {
 .albert{
     border: red 2px solid;
 }
+.borrar{
+    cursor: pointer;
+}
+
 /****************GRID USUARIO*********/
 .grid-user {
     width: 95%;
@@ -478,6 +482,67 @@ a:visited {
 .grid-foto svg{
 }
 .grid-titulo { grid-area: grid-titulo; }
+
+/***********GRID ESTABLECIMIENTO*********/
+.grid-establecimiento-grid-container {
+    display: grid;
+    grid-template-columns: 4.9fr 3.1fr;
+    grid-template-rows: 1fr 3.5fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "titulo grid-establecimiento-titulo" "grid-establecimiento-form grid-establecimiento-foto" "end-form end-form";
+}
+
+.grid-establecimiento-titulo { grid-area: grid-establecimiento-titulo; }
+
+.grid-establecimiento-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    gap: 1px 1px;
+    grid-template-areas: "datos-establecimiento" "datos-direccion";
+    grid-area: grid-establecimiento-form;
+}
+
+.grid-establecimiento-datos-establecimiento {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "datod-d-establecimiento . ." "grid-establecimiento-nombre grid-establecimiento-nombre mesas";
+    grid-area: grid-establecimiento-datos-establecimiento;
+}
+
+.grid-establecimiento-datod-d-establecimiento { grid-area: grid-establecimiento-datod-d-establecimiento; }
+
+.grid-establecimiento-nombre { grid-area: grid-establecimiento-nombre; }
+
+.grid-establecimiento-mesas { grid-area: grid-establecimiento-mesas; }
+
+.grid-establecimiento-datos-direccion {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "datos-d-direccion1 datos-d-direccion1 datos-d-direccion1" "datos-d-direccion2 datos-d-direccion2 datos-d-direccion2";
+    grid-area: grid-establecimiento-datos-direccion;
+}
+
+.grid-establecimiento-datos-d-direccion2 { grid-area: grid-establecimiento-datos-d-direccion2; }
+
+.grid-establecimiento-datos-d-direccion1 { grid-area: grid-establecimiento-datos-d-direccion1; }
+
+.grid-establecimiento-foto { grid-area: grid-establecimiento-foto; }
+
+.grid-establecimiento-end-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 1px 1px;
+    grid-template-areas: "boton . .";
+    grid-area: grid-establecimiento-end-form;
+}
+
+.grid-establecimiento-boton { grid-area: grid-establecimiento-boton; }
 
 /********TOOLTIP**********/
 .tooltip {

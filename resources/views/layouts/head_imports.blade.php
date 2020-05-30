@@ -21,10 +21,8 @@
                 return false;
             });
             $(".borrar").click(function(){
-                if ($( "a.post" ).length ){//comprobar que existe
-                    $(this).find("a.post").click();
-                }else{
-                    window.location=$(this).find("a").attr("href");
+                if ($('a.borrar-input' ).length ){//comprobar que existe
+                    $(this).find("a.borrar-input").click();
                 }
                 return false;
             });

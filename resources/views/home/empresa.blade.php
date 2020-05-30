@@ -9,7 +9,7 @@
 
         <div class="text-center main-btn link">
             @svg('/svg/home-run.svg', 'main-svg')
-{{--            <a  class="anchor-oscura" href="{{route('establecimientos.index')}}">Establecimientos</a>--}}
+            <a  class="anchor-oscura" href="{{route('establecimientos.index')}}">Establecimientos</a>
         </div>
 
         <div class="text-center main-btn link">

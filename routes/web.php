@@ -23,9 +23,10 @@ Route::get('/', function () { return view('welcome');})->name('welcome')->middle
 //});
 
 Auth::routes();
-
-Route::resources([
-    'users'=>'UserController'
-]);
-
+Route::group(['middleware' => 'rol:empresa'], function() {
+    Route::resources([
+        'users'=>'UserController',
+        'establecimientos'=>'EstablecimientoController'
+    ]);
+});
 Route::get('/home', 'HomeController@index')->name('home');

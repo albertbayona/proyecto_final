@@ -10,11 +10,11 @@ class Plato extends Model
     //
     public function establecimiento()
     {
-        return $this->belongsTo('App\establecimientos');
+        return $this->belongsTo('App\establecimiento');
     }
     public function platos_pedidos()
     {
-        return $this->hasMany('App\Platopedido');
+        return $this->hasMany('App\Plato_pedido');
     }
     public function ingredientes()
     {
