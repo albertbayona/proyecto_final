@@ -17,7 +17,6 @@ class EstablecimientoController extends Controller
     {
         $empresaID = auth::user()->establecimiento->empresa->id;
         $establecimientos= Establecimiento::where('empresa_id',$empresaID)->get();
-//        dd($establecimientos[0]);
         return view('establecimientos.index')->with('establecimientos',$establecimientos);
     }
 
@@ -28,7 +27,7 @@ class EstablecimientoController extends Controller
      */
     public function create()
     {
-        //
+        return view('establecimientos.create');
     }
 
     /**
@@ -39,7 +38,24 @@ class EstablecimientoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nombre'=>'required',
+        ]);
+        if (!is_int($request->mesas)|| $request->mesas<0){
+            $request->mesas = 0;
+        }
+        Establecimiento::create([
+            'nombre'=>$request->nombre,
+            'pais'=>$request->pais,
+            'provincia'=>$request->provincia,
+            'municipio' => $request->municipio,
+            'codigo_postal'=>$request->codigo_postal,
+            'calle'=>$request->calle,
+            'mesas'=>$request->mesas,
+            'empresa_id' => auth::user()->establecimiento->empresa->id,
+//            'url_foto'=>$path
+        ]);
+        return redirect(route('establecimientos.index'));
     }
 
     /**
@@ -50,7 +66,8 @@ class EstablecimientoController extends Controller
      */
     public function show($id)
     {
-        //
+        $establecimiento = Establecimiento::find($id);
+        return view('establecimientos.show')->with('establecimiento',$establecimiento);
     }
 
     /**
@@ -61,7 +78,8 @@ class EstablecimientoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $establecimiento = Establecimiento::find($id);
+        return view('establecimientos.edit')->with('establecimiento',$establecimiento);
     }
 
     /**
@@ -73,7 +91,27 @@ class EstablecimientoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        if (!is_int($request->mesas)|| $request->mesas<0){
+            $request->mesas = 0;
+        }
+        //Abajo se hace la validacion de que sea numero y mayor a 0
+        $request->validate([
+            'nombre'=>'required',
+        ]);
+        $establecimiento = Establecimiento::find($id);
+        $establecimiento->update([
+            'nombre'=>$request->nombre,
+            'pais'=>$request->pais,
+            'provincia'=>$request->provincia,
+            'municipio' => $request->municipio,
+            'codigo_postal'=>$request->codigo_postal,
+            'calle'=>$request->calle,
+            'mesas'=>$request->mesas,
+            'empresa_id' => auth::user()->establecimiento->empresa->id,
+//            'url_foto'=>$path
+        ]);
+        return redirect(route('establecimientos.index'));
     }
 
     /**
@@ -84,6 +122,6 @@ class EstablecimientoController extends Controller
      */
     public function destroy($id)
     {
-        //
+
     }
 }

@@ -3,14 +3,13 @@
 @section('content')
     <div class="body-form">
         <div class="card-form ">
-            <form class="grid-establecimiento-grid-container form-95" method="POST" action="{{route('establecimientos.store')}}" enctype="multipart/form-data">
-                @csrf
+            <div class="grid-establecimiento-grid-container form-95" >
                 <div class="grid-establecimiento-titulo text-abajo">
                     <div class="height-c">
                         <div class=" derechaM20 arrow-left link">
                             <a href="{{route('establecimientos.index')}}"></a>
                         </div>
-                        <h3 class="titulo ">Crear establecimiento</h3>
+                        <h3 class="titulo ">Establecimiento: {{$establecimiento->nombre}}</h3>
                     </div>
 
                 </div>
@@ -21,11 +20,11 @@
                         </div>
                         <div class="grid-establecimiento-nombre direction-column">
                             <label for="nombre">Nombre del establecimiento</label>
-                            <input type="text" name="nombre" id="nombre" >
+                            <input type="text" name="nombre" id="nombre" value="{{$establecimiento->nombre}}">
                         </div>
                         <div class="grid-establecimiento-mesas direction-column">
                             <label for="mesas">Mesas</label>
-                            <input type="number" name="mesas" id="mesas" >
+                            <input type="number" name="mesas" id="mesas" value="{{$establecimiento->mesas}}">
                         </div>
                     </div>
                     <div class="grid-establecimiento-datos-direccion1">
@@ -34,25 +33,25 @@
                         </div>
                         <div class="grid-establecimiento-pais direction-column">
                             <label for="pais">Pais</label>
-                            <input type="text" name="pais" id="pais" >
+                            <input type="text" name="pais" id="pais" value="{{$establecimiento->pais}}">
                         </div>
                         <div class="grid-establecimiento-provincia direction-column">
                             <label for="provincia">Provincia</label>
-                            <input type="text" name="provincia" id="provincia" >
+                            <input type="text" name="provincia" id="provincia" value="{{$establecimiento->provincia}}">
                         </div>
                         <div class="grid-establecimiento-municipio direction-column">
                             <label for="municipio">Municipio</label>
-                            <input type="text" name="municipio" id="municipio" >
+                            <input type="text" name="municipio" id="municipio" value="{{$establecimiento->municipio}}">
                         </div>
                     </div>
                     <div class="grid-establecimiento-datos-direccion2">
                         <div class="grid-establecimiento-codigo-postal direction-column">
                             <label for="codigo_postal">Codigo postal</label>
-                            <input type="text" name="codigo_postal" id="codigo_postal" >
+                            <input type="text" name="codigo_postal" id="codigo_postal" value="{{$establecimiento->codigo_postal}}" >
                         </div>
                         <div class="grid-establecimiento-calle direction-column">
                             <label for="calle">Calle</label>
-                            <input type="text" name="calle" id="calle" >
+                            <input type="text" name="calle" id="calle" value="{{$establecimiento->calle}}" >
                         </div>
                     </div>
                 </div>
@@ -63,10 +62,10 @@
 
                 <div class="grid-establecimiento-end-form">
                     <div class="grid-establecimiento-boton">
-                        <input type="submit" class="btn-primary" value="Crear establecimiento">
+                        <a type="submit" class="btn-primary" href="{{route('establecimientos.index')}}">Volver</a>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 @endsection

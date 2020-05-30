@@ -41,12 +41,11 @@ nav {
     left:0;
 
 }
-input[type="file"]{
 
-}
 input[type="text"],
 input[type="email"],
 input[type="password"],
+input[type="number"],
 textarea,select,
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button, input[type="search"], input[type="search"]::-webkit-search-cancel-button,
@@ -373,6 +372,10 @@ a:visited {
 .direction-column{
     display: flex; flex-direction: column;
 }
+.form-95{
+    width:95%;
+    height:100%;
+}
 .albert{
     border: red 2px solid;
 }
@@ -486,69 +489,90 @@ a:visited {
 /***********GRID ESTABLECIMIENTO*********/
 .grid-establecimiento-grid-container {
     display: grid;
-    grid-template-columns: 4.9fr 3.1fr;
+    grid-template-columns: 5fr 3fr;
     grid-template-rows: 1fr 3.5fr 1fr;
-    gap: 1px 1px;
-    grid-template-areas: "titulo grid-establecimiento-titulo" "grid-establecimiento-form grid-establecimiento-foto" "end-form end-form";
+    gap: 0px 0px;
+
 }
 
-.grid-establecimiento-titulo { grid-area: grid-establecimiento-titulo; }
+.grid-establecimiento-titulo { grid-area: 1 / 1 / 2 / 3; }
+
+.grid-establecimiento-end-form {
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    grid-template-rows: 1fr;
+    gap: 20px 20px;
+    grid-area: 3 / 1 / 4 / 3;
+}
+
+.grid-establecimiento-boton { grid-area: 1 / 1 / 2 / 2; }
+
+.grid-establecimiento-imagen {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 2fr 1fr;
+    gap: 20px 20px;
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.grid-establecimiento-foto { grid-area: 2 / 1 / 3 / 4; }
+
+.grid-establecimiento-subir-foto { grid-area: 3 / 1 / 4 / 4; }
 
 .grid-establecimiento-form {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr;
-    gap: 1px 1px;
-    grid-template-areas: "datos-establecimiento" "datos-direccion";
-    grid-area: grid-establecimiento-form;
+    grid-template-rows: repeat(2, 2fr) 1fr;
+    gap: 0px 0px;
+    grid-area: 2 / 1 / 3 / 2;
 }
 
 .grid-establecimiento-datos-establecimiento {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 1px 1px;
-    grid-template-areas: "datod-d-establecimiento . ." "grid-establecimiento-nombre grid-establecimiento-nombre mesas";
-    grid-area: grid-establecimiento-datos-establecimiento;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px 20px;
+    grid-area: 1 / 1 / 2 / 2;
 }
 
-.grid-establecimiento-datod-d-establecimiento { grid-area: grid-establecimiento-datod-d-establecimiento; }
+.grid-establecimiento-datos-d-establecimiento { grid-area: 1 / 1 / 2 / 2; }
 
-.grid-establecimiento-nombre { grid-area: grid-establecimiento-nombre; }
+.grid-establecimiento-nombre { grid-area: 2 / 1 / 3 / 3; }
 
-.grid-establecimiento-mesas { grid-area: grid-establecimiento-mesas; }
+.grid-establecimiento-mesas { grid-area: 2 / 3 / 3 / 4; }
 
-.grid-establecimiento-datos-direccion {
+.grid-establecimiento-datos-direccion1 {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 1px 1px;
-    grid-template-areas: "datos-d-direccion1 datos-d-direccion1 datos-d-direccion1" "datos-d-direccion2 datos-d-direccion2 datos-d-direccion2";
-    grid-area: grid-establecimiento-datos-direccion;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px 20px;
+    grid-area: 2 / 1 / 3 / 2;
 }
 
-.grid-establecimiento-datos-d-direccion2 { grid-area: grid-establecimiento-datos-d-direccion2; }
+.grid-establecimiento-datos-d-direccion { grid-area: 1 / 1 / 2 / 2; }
 
-.grid-establecimiento-datos-d-direccion1 { grid-area: grid-establecimiento-datos-d-direccion1; }
+.grid-establecimiento-pais { grid-area: 2 / 1 / 3 / 2; }
 
-.grid-establecimiento-foto { grid-area: grid-establecimiento-foto; }
+.grid-establecimiento-provincia { grid-area: 2 / 2 / 3 / 3; }
 
-.grid-establecimiento-end-form {
+.grid-establecimiento-municipio { grid-area: 2 / 3 / 3 / 4; }
+
+.grid-establecimiento-datos-direccion2 {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
-    gap: 1px 1px;
-    grid-template-areas: "boton . .";
-    grid-area: grid-establecimiento-end-form;
+    gap: 20px 20px;
+    grid-area: 3 / 1 / 4 / 2;
 }
 
-.grid-establecimiento-boton { grid-area: grid-establecimiento-boton; }
+.grid-establecimiento-codigo-postal { grid-area: 1 / 1 / 2 / 2; }
+
+.grid-establecimiento-calle { grid-area: 1 / 2 / 2 / 4; }
 
 /********TOOLTIP**********/
 .tooltip {
     position: relative;
     display: inline-block;
-    /*border-bottom: 1px dotted black;*/
 }
 
 .tooltip .tooltiptext {
