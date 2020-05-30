@@ -14,7 +14,7 @@
 
         <div class="text-center main-btn link">
             @svg('/svg/tools-and-utensils.svg', 'main-svg')
-{{--            <a  class="anchor-oscura"  href="{{route('configuracion.index')}}">Configuracion</a>--}}
+            <a  class="anchor-oscura"  href="{{route('configuracion')}}">Configuracion</a>
         </div>
     </div>
 @endsection

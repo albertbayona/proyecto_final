@@ -17,11 +17,11 @@ class Empresa extends Model
     ];
     public function establecimientos()
     {
-        return $this->hasMany('App\establecimiento');
+        return $this->hasMany('App\Establecimiento');
     }
     public function tarjeta()
     {
-        return $this->hasOne('App\establecimientos');
+        return $this->hasOne('App\Tarjeta');
     }
 
 }

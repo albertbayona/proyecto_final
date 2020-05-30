@@ -13,14 +13,14 @@ class CreateTarjetasTable extends Migration
      */
     public function up()
     {
-        Schema::create('tarjeta', function (Blueprint $table) {
+        Schema::create('tarjetas', function (Blueprint $table) {
             $table->integer('numero_tarjeta');
             $table->string('titular_tarjeta');
             $table->string('fecha_caducidad');
             $table->integer('CVV');
             $table->foreignId('empresa_id')->primary();
             $table->foreign('empresa_id')->references('id')->on('empresas');
-
+            $table->timestamps();
         });
     }
 

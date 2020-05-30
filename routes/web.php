@@ -28,5 +28,8 @@ Route::group(['middleware' => 'rol:empresa'], function() {
         'users'=>'UserController',
         'establecimientos'=>'EstablecimientoController'
     ]);
+    Route::get('/empresa','EmpresaController@index')->name('configuracion');
+    Route::put('/empresa','EmpresaController@update')->name('configuracion.update');
+
 });
 Route::get('/home', 'HomeController@index')->name('home');
