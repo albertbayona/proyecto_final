@@ -19,5 +19,9 @@ class Empresa extends Model
     {
         return $this->hasMany('App\establecimientos');
     }
+    public function tarjeta()
+    {
+        return $this->hasOne('App\establecimientos');
+    }
 
 }

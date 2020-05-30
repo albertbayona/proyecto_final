@@ -416,13 +416,24 @@ a:visited {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 2fr;
     gap: 10px 20px;
+    grid-template-areas: "grid-d-contacto . ." "grid-email grid-contrasenya grid-telefono";
+    grid-area: contacto;
+}
+/**Para el metodo show**/
+.grid-contacto-show {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    gap: 10px 20px;
     grid-template-areas: "grid-d-contacto . ." "grid-email grid-email grid-telefono";
     grid-area: contacto;
 }
-
+/****/
 .grid-d-contacto { grid-area: grid-d-contacto; }
 
 .grid-email { grid-area: grid-email; }
+
+.grid-contrasenya  { grid-area: grid-contrasenya ; }
 
 .grid-telefono { grid-area: grid-telefono; }
 

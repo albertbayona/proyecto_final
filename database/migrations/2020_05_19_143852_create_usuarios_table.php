@@ -25,6 +25,7 @@ class CreateUsuariosTable extends Migration
             $table->string('url_foto')->nullable();
             $table->foreignId('establecimiento_id');
             $table->foreignId('rol_id');
+            $table->boolean('active')->default(1);
             $table->rememberToken();
             $table->timestamps();
         });
