@@ -36917,7 +36917,7 @@ var Popper = function () {
       return update.call(this);
     }
   }, {
-    key: 'destroy',
+    key: 'destroy.blade.php',
     value: function destroy$$1() {
       return destroy.call(this);
     }
@@ -43430,7 +43430,7 @@ function registerRef (vnode, isRemoval) {
 
 var emptyNode = new VNode('', {}, []);
 
-var hooks = ['create', 'activate', 'update', 'remove', 'destroy'];
+var hooks = ['create', 'activate', 'update', 'remove', 'destroy.blade.php'];
 
 function sameVnode (a, b) {
   return (

@@ -23,7 +23,7 @@ class CreateEmpresasTable extends Migration
             $table->string('municipio')->nullable();
             $table->integer('codigo_postal')->nullable();
             $table->string('calle')->nullable();
-            $table->boolean('suscrito')->default('false');
+            $table->boolean('suscrito')->default(0);
             $table->timestamps();
         });
 

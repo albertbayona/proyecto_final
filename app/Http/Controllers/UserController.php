@@ -19,8 +19,8 @@ class UserController extends Controller
     {
         $empresaID = auth::user()->establecimiento->empresa->id;
         $establecimientosIDs= Establecimiento::select('id')->where('empresa_id',$empresaID)->get()->toArray();
-//        dd($establecimientosIDs);
-        $users = User::whereIn('establecimiento_id',$establecimientosIDs )->get();
+        $users = User::where("active",1)->whereIn('establecimiento_id',$establecimientosIDs )->get();
+
         return view('users.index',compact("users"));
     }
 
@@ -49,14 +49,23 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'email'=>'required|unique:users',
+            'email'=>'required|email|unique:usuarios',
+            'contrasenya' => 'required'
+
         ]);
-        $path=$request->file('photo')->store('photos','public');
-        User::create(['description'=>$request->description,
-            'price'=>$request->price,
-            'owner_id'=>$request->owner_id,
-            'photo'=>$path
+
+//        $path=$request->file('photo')->store('photos','public');
+        User::create([
+            'nombre'=>$request->nombre,
+            'apellidos'=>$request->apellidos,
+            'email'=>$request->email,
+            'password' => bcrypt($request->contrasenya),
+            'telefono'=>$request->telefono,
+            'establecimiento_id'=>$request->establecimiento,
+            'rol_id'=>$request->rol,
+//            'url_foto'=>$path
         ]);
+        return redirect(route('users.index'));
     }
 
     /**
@@ -67,7 +76,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return "hola ".$id;
+        $user = User::find($id);
+
+        return  view('users.show')->with('user',$user);
     }
 
     /**
@@ -78,7 +89,12 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        $empresa_id = $user->establecimiento->empresa->id;
+        $establecimientos = Establecimiento::where('empresa_id',$empresa_id)->get();
+        $roles = Rol::where('id','!=',1)->get();
+
+        return view('users.edit')->with('roles',$roles)->with('establecimientos',$establecimientos)->with('user',$user);
     }
 
     /**
@@ -90,7 +106,30 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $user = User::find($id);
+
+        $request->validate([
+            'email' => 'required|email|unique:usuarios,email,'.$user->id,
+            'nombre' => 'required'
+        ]);
+        $datos= [
+            'nombre'=>$request->nombre,
+            'apellidos'=>$request->apellidos,
+            'email' => $request->email,
+            'telefono'=>$request->telefono,
+            'establecimiento_id'=>$request->establecimiento,
+            'rol_id'=>$request->rol,
+//            'url_foto'=>$path
+        ];
+
+        if ($request->contrasenya != ""){
+            $datos['password']=bcrypt($request->contrasenya);
+        }
+
+//        $path=$request->file('photo')->store('photos','public');
+        User::find($id)->update($datos);
+        return redirect(route('users.index'));
     }
 
     /**
@@ -101,6 +140,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::find($id);
+        $user::update(['active'=>'0']);
+
+        return  redirect(route('users.index'));
+
     }
 }

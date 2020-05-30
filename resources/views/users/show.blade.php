@@ -3,13 +3,13 @@
 @section('content')
     <div class="body-form">
         <div class="card-form ">
-            <form class="grid-user" method="POST" action="{{route('users.store')}}" enctype="multipart/form-data">
-                @csrf
+            <div class="grid-user" >
+
                 <div class="grid-titulo height-c">
                     <div class=" derechaM20 arrow-left link">
                         <a href="{{route('users.index')}}"></a>
                     </div>
-                    <h3 class="titulo ">Crear usuario</h3>
+                    <h3 class="titulo ">Usuario: {{$user->nombre}} {{$user->apellidos}}</h3>
                 </div>
 
                 <div class="grid-formulario">
@@ -17,26 +17,22 @@
                         <div class="grid-d-personal text-abajo"><h3>Datos personales</h3></div>
                         <div class="grid-nombre direction-column">
                             <label for="nombre">Nombre</label>
-                            <input type="text" name="nombre" id="nombre" >
+                            <input type="text" name="nombre" id="nombre" value="{{$user->nombre}}">
                         </div>
                         <div class="grid-apellidos direction-column">
                             <label for="apellidos">Apellidos</label>
-                            <input type="text" name="apellidos" id="apellidos">
+                            <input type="text" name="apellidos" id="apellidos" value="{{$user->apellidos}}">
                         </div>
                     </div>
-                    <div class="grid-contacto">
+                    <div class="grid-contacto-show">
                         <div class="grid-d-contacto text-abajo"><h3>Datos de usuario</h3></div>
                         <div class="grid-email direction-column">
                             <label for="email">Email</label>
-                            <input type="text" name="email" id="email">
-                        </div>
-                        <div class="grid-contrasenya  direction-column">
-                            <label for="contrasenya">Contraseña</label>
-                            <input type="password" name="contrasenya" id="contrasenya">
+                            <input type="text" name="email" id="email" value="{{$user->email}}">
                         </div>
                         <div class="grid-telefono direction-column">
                             <label for="nombre">Teléfono</label>
-                            <input type="text" name="telefono" id="telefono">
+                            <input type="text" name="telefono" id="telefono" value="{{$user->telefono}}">
                         </div>
                     </div>
                     <div class="grid-datos-empresa">
@@ -44,17 +40,13 @@
                         <div class="grid-establecimiento  direction-column">
                             <label for="establecimiento">Establecimiento</label>
                             <select name="establecimiento" id="establecimiento">
-                                @foreach($establecimientos as $establecimiento)
-                                    <option value="{{$establecimiento['id']}}">{{$establecimiento['nombre']}}</option>
-                                @endforeach
+                                <option value="{{$user->establecimiento->id}}">{{$user->establecimiento->nombre}}</option>
                             </select>
                         </div>
                         <div class="grid-rol direction-column">
                             <label for="rol">Rol</label>
                             <select name="rol" id="rol">
-                                @foreach($roles as $rol)
-                                    <option value="{{$rol['id']}}">{{$rol['nombre']}}</option>
-                                @endforeach
+                                <option value="{{$user->rol->id}}">{{$user->rol->nombre}}</option>
                             </select>
                         </div>
                     </div>
@@ -69,10 +61,10 @@
                 </div>
                 <div class="grid-end-form">
                     <div class="grid-boton ">
-                        <input type="submit" class="btn-primary" value="Crear usuario">
+                        <a type="submit" class="btn-primary" href="{{route('users.index')}}">Volver</a>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 @endsection
