@@ -14,7 +14,7 @@ class CreateTarjetasTable extends Migration
     public function up()
     {
         Schema::create('tarjetas', function (Blueprint $table) {
-            $table->integer('numero_tarjeta');
+            $table->string('numero_tarjeta');
             $table->string('titular_tarjeta');
             $table->string('fecha_caducidad');
             $table->integer('CVV');
@@ -31,6 +31,7 @@ class CreateTarjetasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tarjeta');
+
+        Schema::dropIfExists('tarjetas');
     }
 }

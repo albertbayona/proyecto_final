@@ -23,5 +23,15 @@ class Plato extends Model
     public function categoria(){
         return $this->belongsTo(Categoria::class);
     }
+
+    public function quedanIngredientes(){
+        $ingredienteFaltante = [];
+        foreach ($this->ingredientes as  $ingrediente){
+            if($ingrediente->en_stock ==0){
+                $ingredienteFaltante[]=$ingrediente;
+            }
+        }
+        return $ingredienteFaltante;
+    }
     // recordar que esta relacionado con las dos tablas intermedias ESPERANDO CORREO DE TONI
 }

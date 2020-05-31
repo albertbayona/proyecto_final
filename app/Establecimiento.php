@@ -29,4 +29,10 @@ class Establecimiento extends Model
     {
         return $this->hasMany('App\Plato');
     }
+    public function productos(){
+        return $this->hasMany('App\Producto');
+    }
+    public function proveedores(){//necesitamos esta relacion o no podriamos crear un proveedor
+        return $this->hasMany('App\Proveedor');
+    }
 }

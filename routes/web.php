@@ -30,6 +30,12 @@ Route::group(['middleware' => 'rol:empresa'], function() {
     ]);
     Route::get('/empresa','EmpresaController@index')->name('configuracion');
     Route::put('/empresa','EmpresaController@update')->name('configuracion.update');
-
 });
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'rol:gestor'], function() {
+    Route::resources([
+        'inventario'=>'ProductoController',
+        'platos'=>'PlatoController',
+        'proveedores'=>'ProveedorController'
+    ]);
+});
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');

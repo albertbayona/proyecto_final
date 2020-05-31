@@ -18,7 +18,8 @@ class ProveedorSeeder extends Seeder
         DB::table('proveedores')->insert([
             'nombre' => 'Pepe garcia',
             'empresa' => 'panaderia Pepe',
-            'email' => $faker->email
+            'email' => $faker->email,
+            'establecimiento_id' => 1,
         ]);
     }
 }

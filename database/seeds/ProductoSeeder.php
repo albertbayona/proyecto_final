@@ -16,7 +16,8 @@ class ProductoSeeder extends Seeder
             'nombre' => 'barra de pan',
             'en_stock' => 3,
             'minimo_recomendable' => 3,
-            'proveedor_id' => 1
+            'proveedor_id' => 1,
+            'establecimiento_id' => 1
         ]);
     }
 }

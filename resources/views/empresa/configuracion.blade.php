@@ -46,36 +46,20 @@
                     </div>
                     <div class="grid-empresa-numero_tarjeta direction-column">
                         <label for="numero_tarjeta">Número de tarjeta</label>
-                        <input type="text" name="numero_tarjeta" id="numero_tarjeta" value="
-                        @if($tarjeta != null)
-                            {{$tarjeta->numero_tarjeta}}
-                        @endif
-                        " >
+                        <input type="text" name="numero_tarjeta" id="numero_tarjeta"  placeholder="1234 1234 1234 1234" value="@if($tarjeta != null){{$tarjeta->numero_tarjeta}}@endif" >
                     </div>
                     <div class="grid-empresa-titular_tarjeta direction-column">
                         <label for="titular_tarjeta">Titular de la tarjeta</label>
-                        <input type="text" name="titular_tarjeta" id="titular_tarjeta" value="
-                        @if($tarjeta != null)
-                            {{$tarjeta->titular_tarjeta}}
-                        @endif
-                        " >
+                        <input type="text" name="titular_tarjeta" id="titular_tarjeta" placeholder="Nombre Apellidos" pattern="[a-zA-Z ']+" value="@if($tarjeta != null){{$tarjeta->titular_tarjeta}}@endif" >
 
                     </div>
                     <div class="grid-empresa-fecha_caducidad direction-column">
                         <label for="fecha_caducidad">Fecha caducidad</label>
-                        <input type="text" name="fecha_caducidad" id="fecha_caducidad" value="
-                        @if($tarjeta != null)
-                        {{$tarjeta->fecha_caducidad}}
-                        @endif
-                        " >
+                        <input type="text" name="fecha_caducidad" id="fecha_caducidad" placeholder="31/12" pattern="[\d]{1,2}\/[\d]{1,2}" value="@if($tarjeta != null){{$tarjeta->fecha_caducidad}}@endif">
                     </div>
                     <div class="grid-empresa-CVV direction-column">
                         <label for="CVV">CVV</label>
-                        <input type="text" name="CVV" id="CVV" value="
-                        @if($tarjeta != null)
-                        {{$tarjeta->CVV}}
-                        @endif
-                        " >
+                        <input type="text" name="CVV" id="CVV" placeholder="123" pattern="[\d]{3}" value="@if($tarjeta != null){{$tarjeta->CVV}}@endif" >
                     </div>
                 </div>
                 <div class="grid-empresa-end-form">

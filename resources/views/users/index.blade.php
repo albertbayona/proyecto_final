@@ -7,7 +7,7 @@
                 <div class=" derechaM20 arrow-left link">
                     <a href="{{route('home')}}"></a>
                 </div>
-                <h3 class="titulo ">Gestion de usuarios</h3>
+                <h3 class="titulo ">gestión de usuarios</h3>
             </div>
             <div class="btn-primary btn-anyadir link"><span class="anyadir">+</span><a href="{{route('users.create')}}">Añadir usuario</a></div>
         </div>

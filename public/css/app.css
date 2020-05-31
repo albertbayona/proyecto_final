@@ -340,7 +340,12 @@ a:visited {
     text-align: center;
     display: grid;
     align-items: center;
-
+}
+.td-danger{
+    background-color: var(--naranja);
+    text-align: center;
+    display: grid;
+    align-items: center;
 }
 .acciones{
     display: grid;
@@ -619,6 +624,57 @@ a:visited {
 .grid-empresa-fecha_caducidad { grid-area: 5 / 3 / 6 / 4; }
 
 .grid-empresa-CVV { grid-area: 5 / 4 / 6 / 5; }
+/*************GRID PRODUCTO***********/
+.grid-producto-grid-container {
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    grid-template-rows: 1fr 3.5fr 1fr;
+    gap: 20px 20px ;
+}
+
+.grid-producto-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 20px 20px ;
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.grid-producto-datos-producto { grid-area: 1 / 1 / 2 / 2; }
+
+.grid-producto-nombre { grid-area: 2 / 1 / 3 / 2; }
+
+.grid-producto-cantidad { grid-area: 2 / 2 / 3 / 3; }
+
+.grid-producto-cantidad-minima { grid-area: 2 / 3 / 3 / 4; }
+
+.grid-producto-datos-proveedor { grid-area: 3 / 1 / 4 / 2; }
+
+.grid-producto-proveedor { grid-area: 4 / 1 / 5 / 4; }
+
+.grid-producto-titulo { grid-area: 1 / 1 / 2 / 3; }
+
+.grid-producto-end-form {
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    grid-template-rows: 1fr;
+    gap: 20px 20px ;
+    grid-area: 3 / 1 / 4 / 3;
+}
+
+.grid-producto-boton { grid-area: 1 / 1 / 2 / 2; }
+
+.grid-producto-imagen {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr 1fr;
+    gap: 20px 20px ;
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.grid-producto-subir-foto { grid-area: 2 / 1 / 3 / 2; }
+
+.grid-producto-foto { grid-area: 1 / 1 / 2 / 2; }
 
 /********TOOLTIP**********/
 .tooltip {

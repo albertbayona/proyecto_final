@@ -65,5 +65,9 @@ class User extends Authenticatable
         }
         return false;
     }
+    public function empresa(){
+        return $this->establecimiento()->first()->empresa;
+
+    }
 
 }
