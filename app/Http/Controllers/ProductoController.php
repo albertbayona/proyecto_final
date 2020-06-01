@@ -67,7 +67,11 @@ class ProductoController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $proveedores = Auth::user()->establecimiento->proveedores;
+        $producto = Producto::find($id);
+
+        return view('inventario.show')->with('proveedores',$proveedores)->with('producto',$producto);
     }
 
     /**

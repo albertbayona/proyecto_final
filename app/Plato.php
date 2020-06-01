@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Plato extends Model
 {
     protected $table = 'platos';
+    protected $fillable=[
+        "nombre" ,
+        "precio",
+        "categoria_id" ,
+        "establecimiento_id"
+    ];
     //
     public function establecimiento()
     {

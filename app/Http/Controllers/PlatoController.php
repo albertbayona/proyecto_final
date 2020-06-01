@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Categoria;
+use App\Plato;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,7 +28,10 @@ class PlatoController extends Controller
      */
     public function create()
     {
-        //
+        $productos = Auth::user()->establecimiento->productos;
+        $categorias = Categoria::all();
+
+        return view('platos.create')->with('productos', $productos)->with('categorias',$categorias);
     }
 
     /**
@@ -37,7 +42,17 @@ class PlatoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $ingredientes = $this->getIngredientes($request->ingredientes);
+        $plato = Plato::create([
+            "nombre" => $request->nombre,
+            "precio" => $request->precio,
+            "categoria_id" => $request->categoria,
+            "establecimiento_id" => Auth::user()->establecimiento->id
+        ]);
+        $plato->ingredientes()->saveMany($ingredientes);
+        $plato->save();
+        return redirect(route("platos.index"));
     }
 
     /**
@@ -48,7 +63,16 @@ class PlatoController extends Controller
      */
     public function show($id)
     {
-        //
+        $productos = Auth::user()->establecimiento->productos;
+        $categorias = Categoria::all();
+        $plato = Plato::find($id);
+        $ingredientes = $plato->ingredientes;
+        $ingredientesStr= "";
+        foreach ($ingredientes as $ingrediente){
+            $ingredientesStr .=$ingrediente->nombre.",";
+        }
+        $ingredientesStr = substr($ingredientesStr, 0, -1);
+        return view("platos.show")->with('productos', $productos)->with('categorias',$categorias)->with('plato',$plato)->with("ingredientes",$ingredientesStr);;
     }
 
     /**
@@ -59,7 +83,16 @@ class PlatoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $productos = Auth::user()->establecimiento->productos;
+        $categorias = Categoria::all();
+        $plato = Plato::find($id);
+        $ingredientes = $plato->ingredientes;
+        $ingredientesStr= "";
+        foreach ($ingredientes as $ingrediente){
+            $ingredientesStr .=$ingrediente->nombre.",";
+        }
+        $ingredientesStr = substr($ingredientesStr, 0, -1);
+        return view('platos.edit')->with('productos', $productos)->with('categorias',$categorias)->with('plato',$plato)->with("ingredientes",$ingredientesStr);
     }
 
     /**
@@ -71,7 +104,19 @@ class PlatoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ingredientes = $this->getIngredientes($request->ingredientes);
+        $plato = Plato::find($id);
+        $plato->update([
+            "nombre" => $request->nombre,
+            "precio" => $request->precio,
+            "categoria_id" => $request->categoria,
+        ]);
+        foreach ($plato->ingredientes as $ingrediente){
+            $plato->ingredientes()->detach($ingrediente->id);
+        }
+        $plato->ingredientes()->saveMany($ingredientes);
+        $plato->save();
+        return redirect(route("platos.index"));
     }
 
     /**
@@ -82,6 +127,25 @@ class PlatoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $plato = Plato::find($id);
+        foreach ($plato->ingredientes as $ingrediente){
+            $plato->ingredientes()->detach($ingrediente->id);
+        }
+        Plato::destroy($id);
+        return redirect(route("platos.index"));
+    }
+
+    protected function getIngredientes($ingredientesStr){
+        $ingredientesArr = explode(';', $ingredientesStr);
+        $productos = Auth::user()->establecimiento->productos->all();
+        $ingredientes = [];
+
+
+        foreach ($productos as $producto){
+            if (array_search($producto->nombre,$ingredientesArr)!==false){
+                $ingredientes[]=$producto;
+            }
+        }
+        return $ingredientes;
     }
 }

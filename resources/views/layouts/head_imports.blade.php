@@ -29,10 +29,12 @@
             $(".link").click(function() {
                 window.location=$(this).find("a").attr("href");
             });
+
         });
 
     </script>
 
+    @yield('scripts')
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">

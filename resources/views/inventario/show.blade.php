@@ -3,15 +3,13 @@
 @section('content')
     <div class="body-form">
         <div class="card-form ">
-            <form class="grid-producto-grid-container form-95" method="POST" action="{{route('inventario.update',$producto->id)}}" enctype="multipart/form-data">
-                @csrf
-                @method('put')
+            <div class="grid-producto-grid-container form-95" >
                 <div class="grid-producto-titulo text-abajo">
                     <div class="height-c">
                         <div class=" derechaM20 arrow-left link">
                             <a href="{{route('inventario.index')}}"></a>
                         </div>
-                        <h3 class="titulo ">Modificar producto</h3>
+                        <h3 class="titulo ">Producto: {{$producto->nombre}}</h3>
                     </div>
                 </div>
                 <div class="grid-producto-formulario">
@@ -50,14 +48,14 @@
 
                 <div class="grid-producto-end-form">
                     <div class="grid-producto-boton">
-                        <input type="submit" class="btn-primary" value="Crear producto">
+                        <a type="submit" class="btn-primary" href="{{route('inventario.index')}}">Volver</a>
                     </div>
                 </div>
                 <div class="grid-producto-imagen">
                     <div class="grid-producto-subir-foto"></div>
                     <div class="grid-producto-foto"></div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 @endsection

@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 @extends('layouts.head_imports')
+@section('scripts')
+    @yield('scripts')
+@endsection
+
 <body>
 <nav class="navbar">
     @guest

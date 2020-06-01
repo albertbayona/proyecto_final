@@ -41,7 +41,6 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="grid-producto-end-form">
                     <div class="grid-producto-boton">
                         <input type="submit" class="btn-primary" value="Crear producto">
