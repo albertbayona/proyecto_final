@@ -1,0 +1,819 @@
+:root {
+    --blanco: #F8F8F8;
+    --blanco-fondo: #F3F3F3;
+    --gris: #A7A7A7;
+    --gris-oscuro: #707070;
+    --negro: #3a3a3a;
+    --beige-cancelado: #E1D3C7;
+    --naranja-claro-blanco: #FFEAD8;
+    --naranja-claro: #FFCDA1;
+    --naranja: #FEAE69;
+    --naranja-chillon: #FF973D;
+    --azul: #78E7FF;
+    --azul-oscuro: #309CB3;
+    --titulo-font: 'Libre Baskerville', serif;
+    --normal-font: 'Public Sans', sans-serif;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--blanco-fondo);
+    display: flex;
+    flex-direction: column;
+    color:var(--negro);
+    font-family: var(--normal-font);
+    height: 100vh;
+
+}
+main{
+    flex: 1;
+}
+
+nav {
+    background-color: var(--naranja-claro);
+    /*margin-bottom: 20px;*/
+    position: sticky;
+    top:0;
+    left:0;
+
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,select,
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button, input[type="search"], input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: var(--blanco);
+    border: none;
+    border-bottom: 2px solid var(--naranja-claro);
+    color:var(--negro);
+}
+input[type="button"]{
+    cursor: pointer;
+}
+ul {
+    list-style-type: none;
+}
+li {
+    display: inline;
+}
+a {
+    color: var(--blanco);
+}
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+.anchor-oscura{
+    color: var(--negro);
+    text-decoration-color: var(--negro);
+
+}
+.link{
+    cursor: pointer;
+}
+
+.navbar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.nav-logo {
+    margin-left: 20px;
+}
+.nav-item{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.nav-item:hover{
+    background-color: var(--naranja);
+    cursor: pointer;
+}
+.logo-naranja, .logo-blanco {
+    font-family: var(--titulo-font);
+    font-size: 75px;
+
+}
+
+.logo-naranja {
+    color: var(--naranja);
+}
+
+.logo-blanco {
+    color: var(--blanco);
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+}
+
+.card-login {
+    display: flex;
+    width: 30%;
+    height: 80%;
+    justify-content: center;
+    align-content: center;
+    flex-flow: column;
+    background-color: #ffffff;
+    border-radius: 50px;
+}
+
+.form-login {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: grid;
+    width: 50%;
+    align-self: center;
+
+}
+
+.btn-primary {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: var(--naranja);
+    color:var(--blanco-fondo);
+    font-weight: 600;
+    border-radius: 42px;
+    height: auto;
+    min-height: 40px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+.btn-login {
+    width: 100%;
+    height: auto;
+    min-height: 40px;
+
+}
+.anyadir{
+    font-size: 45px;
+}
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.derecha {
+    display: flex;
+    justify-content: right;
+}
+
+.width100{
+    width: 100%;
+}
+
+.height100 {
+    height: 100%;
+}
+.center-align{
+    display: flex;
+    align-items: center;
+}
+.height-c {
+    display: flex;
+    align-items: center;
+}
+.body{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.body-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.derechaM20{
+    margin-right: 20px;
+}
+.derechaM40{
+    margin-right: 40px;
+
+}
+.derechaP20{
+    padding-right: 20px;
+}
+.izquierdaM20{
+    margin-left: 20px;
+}
+.izquierdaM40{
+    margin-left: 40px;
+}
+.izquierdaP20{
+    padding-left: 20px;
+}
+.arriba20{
+    margin-top: 20px;
+}
+.abajo5{
+    margin-bottom: 5px;
+}
+.titulo {
+    color: var(--gris-oscuro);
+    font-family: var(--titulo-font);
+    font-size: 30px;
+}
+.titulo-linia{
+    display:grid;
+    grid-template-columns: 3fr repeat(3,1fr);
+    align-content: baseline;
+}
+.btn-anyadir{
+    grid-column-start: 4;
+}
+.letra-blanca{
+    color:var(--blanco);
+}
+.welcome-background{
+    background-image: url('../images/fondo_borroso.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.welcome-btn{
+    height: 300px;
+    width: 300px;
+    background-color: var(--naranja-chillon);
+    border-radius: 50%;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+.welcome-btn:hover{
+    transform: scale(1.2);
+}
+.welcome-btn-text{
+    height: 100%;
+    display:grid;
+    grid-row-gap: 5px;
+    grid-template-rows: repeat(4,1fr);
+    color: var(--blanco-fondo);
+}
+
+.welcome-btn-text h3{
+    font-size: 30px;
+    text-align: center;
+    grid-row-start: 2;
+    transition: 0.3s;
+}
+.welcome-btn-text a{
+    text-align: center;
+    grid-row-start: 3;
+}
+.main-menu{
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(3,33vh);
+    grid-template-rows: 33vh;
+    grid-column-gap: 5vw;
+    justify-content: center;
+    align-content:center;
+}
+.main-btn{
+    background-color: var(--naranja-claro-blanco);
+    transition: 0.3s;
+}
+.main-btn:hover{
+    transform: scale(1.2);
+}
+.main-svg{
+    margin-top: 5px;
+    height: 80%;
+    fill:var(--negro);
+}
+.text-center{
+    text-align: center;
+}
+.text-abajo{
+    display: flex;
+    align-items: end;
+}
+.arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right:22px solid var(--naranja);
+    border-radius: 5px;
+}
+
+.table{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-row-gap: 10px ;
+    grid-template-rows:50px 10px;
+    grid-auto-rows: 50px;
+}
+.th{
+    background-color: white;
+    border-bottom: 5px solid var(--gris);
+    color: var(--gris-oscuro);
+    font-weight: bold;
+    text-align: center;
+    display: grid;
+    align-items: center;
+}
+.td{
+    background-color: white;
+    text-align: center;
+    display: grid;
+    align-items: center;
+}
+.td-danger{
+    background-color: var(--naranja);
+    text-align: center;
+    display: grid;
+    align-items: center;
+}
+.acciones{
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 5px;
+    justify-content: center;
+}
+.accion-svg{
+    width: auto;
+    height: 35px;
+    fill:var(--gris-oscuro);
+}
+.espacio-blanco{
+    grid-column: 4;
+}
+
+.card-form{
+    height: 95%;
+    width:98%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    background-color: white;
+}
+.form-resources{
+    display: grid;
+}
+.direction-column{
+    display: flex; flex-direction: column;
+}
+.form-95{
+    width:95%;
+    height:100%;
+}
+.albert{
+    border: red 2px solid;
+}
+.borrar{
+    cursor: pointer;
+}
+
+/****************GRID USUARIO*********/
+.grid-user {
+    width: 95%;
+    height: 95%;
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    grid-template-rows: 1fr 3.5fr 1fr;
+    gap: 20px 20px;
+    grid-template-areas: "grid-titulo grid-titulo" "formulario imagen" "end-form end-form";
+}
+
+.grid-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px 20px;
+    grid-template-areas: "datos-personales datos-personales datos-personales" "contacto contacto contacto" "datos-empresa datos-empresa datos-empresa";
+    grid-area: formulario;
+}
+
+.grid-datos-personales {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    gap: 10px 20px;
+    grid-template-areas: "grid-d-personal . ." "grid-nombre grid-apellidos grid-apellidos";
+    grid-area: datos-personales;
+}
+
+.grid-nombre { grid-area: grid-nombre; }
+
+.grid-apellidos { grid-area: grid-apellidos; }
+
+.grid-d-personal { grid-area: grid-d-personal; }
+
+.grid-contacto {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    gap: 10px 20px;
+    grid-template-areas: "grid-d-contacto . ." "grid-email grid-contrasenya grid-telefono";
+    grid-area: contacto;
+}
+/**Para el metodo show**/
+.grid-contacto-show {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    gap: 10px 20px;
+    grid-template-areas: "grid-d-contacto . ." "grid-email grid-email grid-telefono";
+    grid-area: contacto;
+}
+/****/
+.grid-d-contacto { grid-area: grid-d-contacto; }
+
+.grid-email { grid-area: grid-email; }
+
+.grid-contrasenya  { grid-area: grid-contrasenya ; }
+
+.grid-telefono { grid-area: grid-telefono; }
+
+.grid-datos-empresa {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    gap: 10px 20px;
+    grid-template-areas: "grid-d-empresa . ." "grid-establecimiento grid-establecimiento grid-rol";
+    grid-area: datos-empresa;
+}
+
+.grid-d-empresa { grid-area: grid-d-empresa; }
+
+.grid-establecimiento { grid-area: grid-establecimiento; }
+
+.grid-rol { grid-area: grid-rol; }
+
+.end-form {
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    grid-template-rows: 1fr;
+    gap: 20px 20px;
+    grid-template-areas: "grid-boton .";
+    grid-area: end-form;
+}
+
+.grid-boton { grid-area: grid-boton; }
+
+.grid-imagen {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr 1fr;
+    gap: 20px 20px;
+    grid-template-areas: "grid-foto" "grid-subir-foto";
+    grid-area: imagen;
+}
+
+.grid-subir-foto { grid-area: grid-subir-foto; }
+
+.grid-foto { grid-area: grid-foto; }
+.grid-foto svg{
+}
+.grid-titulo { grid-area: grid-titulo; }
+
+/***********GRID ESTABLECIMIENTO*********/
+.grid-establecimiento-grid-container {
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    grid-template-rows: 1fr 3.5fr 1fr;
+    gap: 0px 0px;
+
+}
+
+.grid-establecimiento-titulo { grid-area: 1 / 1 / 2 / 3; }
+
+.grid-establecimiento-end-form {
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    grid-template-rows: 1fr;
+    gap: 20px 20px;
+    grid-area: 3 / 1 / 4 / 3;
+}
+
+.grid-establecimiento-boton { grid-area: 1 / 1 / 2 / 2; }
+
+.grid-establecimiento-imagen {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 2fr 1fr;
+    gap: 20px 20px;
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.grid-establecimiento-foto { grid-area: 2 / 1 / 3 / 4; }
+
+.grid-establecimiento-subir-foto { grid-area: 3 / 1 / 4 / 4; }
+
+.grid-establecimiento-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 2fr) 1fr;
+    gap: 0px 0px;
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.grid-establecimiento-datos-establecimiento {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px 20px;
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.grid-establecimiento-datos-d-establecimiento { grid-area: 1 / 1 / 2 / 2; }
+
+.grid-establecimiento-nombre { grid-area: 2 / 1 / 3 / 3; }
+
+.grid-establecimiento-mesas { grid-area: 2 / 3 / 3 / 4; }
+
+.grid-establecimiento-datos-direccion1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px 20px;
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.grid-establecimiento-datos-d-direccion { grid-area: 1 / 1 / 2 / 2; }
+
+.grid-establecimiento-pais { grid-area: 2 / 1 / 3 / 2; }
+
+.grid-establecimiento-provincia { grid-area: 2 / 2 / 3 / 3; }
+
+.grid-establecimiento-municipio { grid-area: 2 / 3 / 3 / 4; }
+
+.grid-establecimiento-datos-direccion2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 20px 20px;
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.grid-establecimiento-codigo-postal { grid-area: 1 / 1 / 2 / 2; }
+
+.grid-establecimiento-calle { grid-area: 1 / 2 / 2 / 4; }
+/******************CONFIGURACION EMPRESA***********/
+.grid-empresa-grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 7fr 3fr;
+    gap: 20px 20px;
+}
+
+.grid-empresa-titulo { grid-area: 1 / 1 / 2 / 2; }
+
+.grid-empresa-end-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px 20px;
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.grid-empresa-boton { grid-area: 1 / 1 / 2 / 2; }
+
+.grid-empresa-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 20px 20px;
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.grid-empresa-datos-empresa { grid-area: 1 / 1 / 2 / 2; }
+
+.grid-empresa-pais { grid-area: 2 / 1 / 3 / 2; }
+
+.grid-empresa-provincia { grid-area: 2 / 2 / 3 / 3; }
+
+.grid-empresa-municipio { grid-area: 2 / 3 / 3 / 4; }
+
+.grid-empresa-codigo_postal { grid-area: 2 / 4 / 3 / 5; }
+
+.grid-empresa-calle { grid-area: 3 / 1 / 4 / 4; }
+
+.grid-empresa-NIF { grid-area: 3 / 4 / 4 / 5; }
+
+.grid-empresa-datos-tarjeta { grid-area: 4 / 1 / 5 / 2; }
+
+.grid-empresa-numero_tarjeta { grid-area: 5 / 1 / 6 / 2; }
+
+.grid-empresa-titular_tarjeta { grid-area: 5 / 2 / 6 / 3; }
+
+.grid-empresa-fecha_caducidad { grid-area: 5 / 3 / 6 / 4; }
+
+.grid-empresa-CVV { grid-area: 5 / 4 / 6 / 5; }
+/*************GRID PRODUCTO***********/
+.grid-producto-grid-container {
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    grid-template-rows: 1fr 3.5fr 1fr;
+    gap: 20px 20px ;
+}
+
+.grid-producto-formulario {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 20px 20px ;
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.grid-producto-datos-producto { grid-area: 1 / 1 / 2 / 2; }
+
+.grid-producto-nombre { grid-area: 2 / 1 / 3 / 2; }
+
+.grid-producto-cantidad { grid-area: 2 / 2 / 3 / 3; }
+
+.grid-producto-cantidad-minima { grid-area: 2 / 3 / 3 / 4; }
+
+.grid-producto-datos-proveedor { grid-area: 3 / 1 / 4 / 2; }
+
+.grid-producto-proveedor { grid-area: 4 / 1 / 5 / 4; }
+
+.grid-producto-titulo { grid-area: 1 / 1 / 2 / 3; }
+
+.grid-producto-end-form {
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    grid-template-rows: 1fr;
+    gap: 20px 20px ;
+    grid-area: 3 / 1 / 4 / 3;
+}
+
+.grid-producto-boton { grid-area: 1 / 1 / 2 / 2; }
+
+.grid-producto-imagen {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr 1fr;
+    gap: 20px 20px ;
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.grid-producto-subir-foto { grid-area: 2 / 1 / 3 / 2; }
+
+.grid-producto-foto { grid-area: 1 / 1 / 2 / 2; }
+/****GRID MENU******/
+.grid-menu-grid-container {
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    grid-template-rows: 1fr 3.5fr 1fr;
+    gap: 20px 20px;
+}
+
+.grid-menu-titulo { grid-area: 1 / 1 / 2 / 3; }
+
+.grid-menu-end-form {
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    grid-template-rows: 1fr;
+    gap: 20px 20px;
+    grid-area: 3 / 1 / 4 / 3;
+}
+
+.grid-menu-boton { grid-area: 1 / 1 / 2 / 2; }
+
+.grid-menu-imagen {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    gap: 20px 20px;
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.grid-menu-foto { grid-area: 2 / 1 / 3 / 4; }
+
+.grid-menu-subir-foto { grid-area: 3 / 1 / 4 / 4; }
+
+.grid-menu-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px 20px;
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.grid-menu-nombre { grid-area: 1 / 1 / 2 / 3; }
+
+.grid-menu-precio { grid-area: 1 / 3 / 2 / 4; }
+
+.grid-menu-categoria { grid-area: 2 / 1 / 3 / 2; }
+
+.grid-menu-ingredientes { grid-area: 3 / 1 / 4 / 4; }
+
+.grid-menu-ingrediente { grid-area: 2 / 2 / 3 / 4; }
+
+/**********GRID PROVEEDORES**************/
+.grid-proveedores-grid-container {
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    grid-template-rows: 1fr 3.5fr 1fr;
+    gap: 20px 20px;
+}
+
+.grid-proveedores-titulo { grid-area: 1 / 1 / 2 / 3; }
+
+.grid-proveedores-end-form {
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    grid-template-rows: 1fr;
+    gap: 20px 20px;
+    grid-area: 3 / 1 / 4 / 3;
+}
+
+.grid-proveedores-boton { grid-area: 1 / 1 / 2 / 2; }
+
+.grid-proveedores-imagen {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    gap: 20px 20px;
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.grid-proveedores-foto { grid-area: 2 / 1 / 3 / 4; }
+
+.grid-proveedores-subir-foto { grid-area: 3 / 1 / 4 / 4; }
+
+.grid-proveedores-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 2fr;
+    gap: 20px 20px;
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.grid-proveedores-nombre { grid-area: 2 / 1 / 3 / 3; }
+
+.grid-proveedores-empresa { grid-area: 2 / 3 / 3 / 4; }
+
+.grid-proveedores-email { grid-area: 4 / 1 / 5 / 3; }
+
+.grid-proveedores-telefono { grid-area: 4 / 3 / 5 / 4; }
+
+.grid-proveedores-datos-empleado { grid-area: 1 / 1 / 2 / 4; }
+
+.grid-proveedores-datos-contacto { grid-area: 3 / 1 / 4 / 4; }
+/********TOOLTIP**********/
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

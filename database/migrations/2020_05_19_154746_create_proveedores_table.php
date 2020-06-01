@@ -17,12 +17,16 @@ class CreateProveedoresTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('empresa');
-            $table->string('telefono');
-            $table->string('email')->comment('un mismo proveedor puede repetirse si esta disponible para diferentes empresas');
+//            son nullables para que asi lo pueda rellenar cuando mejor le vaya y si tiene el telefono no tiene por que tener el mail y viceversa
+            $table->string('telefono')->nullable();
+            $table->string('email')->comment('un mismo proveedor puede repetirse si esta disponible para diferentes empresas')->nullable();
+            $table->foreignId('establecimiento_id');
+            $table->foreign('establecimiento_id')->references('id')->on('establecimientos');
+
             $table->timestamps();
         });
         Schema::table('productos',function (Blueprint $table){
-            $table->foreignId('proveedor_id');
+            $table->foreignId('proveedor_id')->nullable();
             $table->foreign('proveedor_id')->references('id')->on('proveedores');
         });
     }

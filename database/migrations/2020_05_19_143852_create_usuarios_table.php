@@ -17,18 +17,18 @@ class CreateUsuariosTable extends Migration
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('apellidos');
+            $table->string('apellidos')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('telefono');
-            $table->string('url_foto');
-
+            $table->string('telefono')->nullable();
+            $table->string('url_foto')->nullable();
+            $table->foreignId('establecimiento_id');
+            $table->foreignId('rol_id');
+            $table->boolean('active')->default(1);
             $table->rememberToken();
             $table->timestamps();
         });
-        //$table->bigInteger('rol_id')->unsigned();
-        //            $table->bigInteger('establecimiento_id')->unsigned();
 
     }
 

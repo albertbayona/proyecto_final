@@ -12,7 +12,30 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () { return view('welcome');})->name('welcome')->middleware('guest');
 
-Route::get('/', function () {
-    return view('welcome');
+//Route::get('', 'HomeController@empresa')->middleware('rol:empresa');
+
+
+//Route::get('/prueba',function(){
+//    $user = \App\User::find(1);
+//    dd($user->establecimiento->nombre);
+//});
+
+Auth::routes();
+Route::group(['middleware' => 'rol:empresa'], function() {
+    Route::resources([
+        'users'=>'UserController',
+        'establecimientos'=>'EstablecimientoController'
+    ]);
+    Route::get('/empresa','EmpresaController@index')->name('configuracion');
+    Route::put('/empresa','EmpresaController@update')->name('configuracion.update');
 });
+Route::group(['middleware' => 'rol:gestor'], function() {
+    Route::resources([
+        'inventario'=>'ProductoController',
+        'platos'=>'PlatoController',
+        'proveedores'=>'ProveedorController'
+    ]);
+});
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
