@@ -12,10 +12,10 @@ class PlatoPedidoSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('platos_pedidos')->insert([
-            'pedido_id' => 1,
-            'plato_id' => 1,
-            'cantidad' => 2,
-        ]);
+//        DB::table('platos_pedidos')->insert([
+//            'pedido_id' => 1,
+//            'plato_id' => 1,
+//            'cantidad' => 2,
+//        ]);
     }
 }

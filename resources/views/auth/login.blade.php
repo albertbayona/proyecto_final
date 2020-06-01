@@ -3,7 +3,7 @@
 @section('content')
 <div class="center arriba20">
     <div class="card-login " >
-        <div class="logo-naranja center height100">Logo</div>
+        <div class="logo-naranja center height100">Rest</div>
         <form method="POST" class="form-login" action="{{ route('login') }}">
             @csrf
             <div>
@@ -49,11 +49,11 @@
                         {{ __('Login') }}
                     </button>
 
-                    @if (Route::has('password.request'))
-                        <a class="anchor-oscura" href="{{ route('password.request') }}">
-                            {{ __('Forgot Your Password?') }}
-                        </a>
-                    @endif
+{{--                    @if (Route::has('password.request'))--}}
+{{--                        <a class="anchor-oscura" href="{{ route('password.request') }}">--}}
+{{--                            {{ __('Forgot Your Password?') }}--}}
+{{--                        </a>--}}
+{{--                    @endif--}}
                 </div>
             </div>
         </form>

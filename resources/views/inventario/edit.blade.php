@@ -24,11 +24,11 @@
                     </div>
                     <div class="grid-producto-cantidad direction-column">
                         <label for="en_stock">En stock</label>
-                        <input type="text" name="en_stock" id="en_stock" value="{{$producto->nombre}}">
+                        <input type="text" name="en_stock" id="en_stock" value="{{$producto->en_stock}}">
                     </div>
                     <div class="grid-producto-cantidad-minima direction-column">
                         <label for="minimo_recomendable">Cantidad mínima recomendable</label>
-                        <input type="text" name="minimo_recomendable" id="minimo_recomendable" value="{{$producto->nombre}}">
+                        <input type="text" name="minimo_recomendable" id="minimo_recomendable" value="{{$producto->minimo_recomendable}}">
                     </div>
                     <div class="grid-producto-datos-proveedor text-abajo">
                         <h3>Datos del proveedor</h3>

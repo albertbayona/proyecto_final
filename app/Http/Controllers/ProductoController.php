@@ -14,6 +14,9 @@ class ProductoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private $rules =['nombre'=>'required',
+            'en_stock'=>'required|numeric',
+            'minimo_recomendable'=>'numeric'];
     public function index()
     {
         $establecimiento = Auth::user()->establecimiento;
@@ -45,9 +48,8 @@ class ProductoController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'nombre'=>'required',
-        ]);
+        $request->validate($this->rules);
+
         Producto::create([
             "nombre"=>$request->nombre,
             "en_stock"=>$request->en_stock,
@@ -97,12 +99,14 @@ class ProductoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Producto::create([
+        $request->validate($this->rules);
+
+
+        Producto::find($id)->update([
             "nombre"=>$request->nombre,
             "en_stock"=>$request->en_stock,
             "minimo_recomendable"=>$request->minimo_recomendable,
             "proveedor_id"=> $request->proveedor_id,
-            'establecimiento_id' => auth::user()->establecimiento->id
         ]);
         return redirect(route("inventario.index"));
     }
@@ -115,6 +119,11 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
+        $producto = Producto::find($id);
+        foreach ($producto->platos as $plato){
+            $producto->platos()->detach($plato->id);
+        }
+
         Producto::destroy($id);
         return redirect(route("inventario.index"));
 

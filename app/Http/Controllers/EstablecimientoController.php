@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Establecimiento;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use mysql_xdevapi\Exception;
 
 class EstablecimientoController extends Controller
 {
@@ -122,6 +123,10 @@ class EstablecimientoController extends Controller
      */
     public function destroy($id)
     {
-
+        $users = Establecimiento::find($id)->usuarios->first();
+        if($users==null){
+            Establecimiento::destroy($id);
+        }
+        return redirect(route("establecimientos.index"));
     }
 }

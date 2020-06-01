@@ -14,6 +14,8 @@ class PlatoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private $rules = ['nombre'=>'required',
+        'precio'=>'required|numeric'];
     public function index()
     {
         $establecimiento = Auth::user()->establecimiento;
@@ -28,6 +30,7 @@ class PlatoController extends Controller
      */
     public function create()
     {
+
         $productos = Auth::user()->establecimiento->productos;
         $categorias = Categoria::all();
 
@@ -42,6 +45,7 @@ class PlatoController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate($this->rules);
 
         $ingredientes = $this->getIngredientes($request->ingredientes);
         $plato = Plato::create([
@@ -104,6 +108,8 @@ class PlatoController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate($this->rules);
+
         $ingredientes = $this->getIngredientes($request->ingredientes);
         $plato = Plato::find($id);
         $plato->update([

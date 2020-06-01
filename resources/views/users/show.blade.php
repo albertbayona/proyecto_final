@@ -17,22 +17,22 @@
                         <div class="grid-d-personal text-abajo"><h3>Datos personales</h3></div>
                         <div class="grid-nombre direction-column">
                             <label for="nombre">Nombre</label>
-                            <input type="text" name="nombre" id="nombre" value="{{$user->nombre}}">
+                            <input disabled type="text" name="nombre" id="nombre" value="{{$user->nombre}}">
                         </div>
                         <div class="grid-apellidos direction-column">
                             <label for="apellidos">Apellidos</label>
-                            <input type="text" name="apellidos" id="apellidos" value="{{$user->apellidos}}">
+                            <input disabled type="text" name="apellidos" id="apellidos" value="{{$user->apellidos}}">
                         </div>
                     </div>
                     <div class="grid-contacto-show">
                         <div class="grid-d-contacto text-abajo"><h3>Datos de usuario</h3></div>
                         <div class="grid-email direction-column">
                             <label for="email">Email</label>
-                            <input type="email" name="email" id="email" value="{{$user->email}}">
+                            <input disabled type="email" name="email" id="email" value="{{$user->email}}">
                         </div>
                         <div class="grid-telefono direction-column">
                             <label for="nombre">Teléfono</label>
-                            <input type="text" name="telefono" id="telefono" value="{{$user->telefono}}">
+                            <input disabled type="text" name="telefono" id="telefono" value="{{$user->telefono}}">
                         </div>
                     </div>
                     <div class="grid-datos-empresa">
@@ -53,10 +53,8 @@
                 </div>
                 <div class="grid-imagen">
                     <div class="grid-subir-foto">
-{{--                        <input type="file" name="photo">--}}
                     </div>
                     <div class="grid-foto">
-{{--                                                @svg('/svg/social.svg', 'accion-svg')--}}
                     </div>
                 </div>
                 <div class="grid-end-form">

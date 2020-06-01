@@ -3,7 +3,7 @@
 @section('content')
     <div class="center arriba20">
         <div class="card-login ">
-            <div class="logo-naranja center height100">Logo</div>
+            <div class="logo-naranja center height100">Rest</div>
             @if (session('status'))
                 <div class="alert alert-success" role="alert">
                     {{ session('status') }}

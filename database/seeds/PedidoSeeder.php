@@ -14,10 +14,10 @@ class PedidoSeeder extends Seeder
     public function run()
     {
 
-        DB::table('pedidos')->insert([
-            'coste_total' => 15,
-            'usuario_id' => 3,
-            'created_at' => date("Y-m-d H:i:s")
-        ]);
+//        DB::table('pedidos')->insert([
+//            'coste_total' => 15,
+//            'usuario_id' => 3,
+//            'created_at' => date("Y-m-d H:i:s")
+//        ]);
     }
 }

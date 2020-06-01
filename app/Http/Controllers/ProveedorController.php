@@ -14,6 +14,9 @@ class ProveedorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private $rules =['nombre'=>'required',
+        'empresa'=>'required'];
+
     public function index()
     {
         $proveedores = Auth::user()->establecimiento->proveedores;
@@ -38,6 +41,8 @@ class ProveedorController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate($this->rules);
+
         Proveedor::create([
             'nombre'=>$request->nombre,
             'empresa'=>$request->empresa,
@@ -81,6 +86,8 @@ class ProveedorController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate($this->rules);
+
         Proveedor::find($id)->update([
             'nombre'=>$request->nombre,
             'empresa'=>$request->empresa,

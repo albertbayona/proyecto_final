@@ -3,7 +3,7 @@
 @section('content')
     <div class="center">
         <div class="card-login " >
-            <div class="logo-naranja center height100">Logo</div>
+            <div class="logo-naranja center height100">Rest</div>
             <form method="POST" action="{{ route('password.update') }}">
                 @csrf
 

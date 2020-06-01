@@ -11,7 +11,6 @@
                         </div>
                         <h3 class="titulo ">Establecimiento: {{$establecimiento->nombre}}</h3>
                     </div>
-
                 </div>
                 <div class="grid-establecimiento-form">
                     <div class="grid-establecimiento-datos-establecimiento">

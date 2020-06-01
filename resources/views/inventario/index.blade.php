@@ -27,11 +27,16 @@
                     <div class="td-danger">{{$producto->en_stock}}</div>
                     <div class="td-danger">{{$producto->minimo_recomendable}}</div>
                     <div class="td-danger acciones">
-                        <div class="link tooltip">
-                            <span class="tooltiptext">Proveedor</span>
+                        @if($producto->proveedor!=null)
+                            <div class="link tooltip">
 
-                            <a href="{{route('proveedores.show',['proveedore' => $producto->proveedor->id])}}"></a>
-                            @svg('/svg/interface-libreta.svg', 'accion-svg')
+                                <span class="tooltiptext">Proveedor</span>
+                                <a href="{{route('proveedores.show',$producto->proveedor->id)}}"></a>
+                                @else
+                                    <div class=" tooltip">
+                                        <span class="tooltiptext">No tiene proveedor</span>
+                                        @endif
+                                        @svg('/svg/interface-libreta.svg', 'accion-svg')
                         </div>
                         <div class="link tooltip">
                             <span class="tooltiptext">Ver</span>
@@ -61,9 +66,15 @@
                     <div class="td">{{$producto->en_stock}}</div>
                     <div class="td">{{$producto->minimo_recomendable}}</div>
                     <div class="td acciones">
-                        <div class="link tooltip">
-                            <span class="tooltiptext">Editar</span>
-                            <a href="{{route('inventario.edit',['inventario' => $producto->id])}}"></a>
+                        @if($producto->proveedor!=null)
+                            <div class="link tooltip">
+
+                                <span class="tooltiptext">Proveedor</span>
+                                <a href="{{route('proveedores.show',$producto->proveedor->id)}}"></a>
+                        @else
+                            <div class=" tooltip">
+                                <span class="tooltiptext">No tiene proveedor</span>
+                        @endif
                             @svg('/svg/interface-libreta.svg', 'accion-svg')
                         </div>
                         <div class="link tooltip">

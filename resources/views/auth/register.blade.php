@@ -3,7 +3,7 @@
 @section('content')
     <div class="center arriba20">
         <div class="card-login " >
-            <div class="logo-naranja center height100">Logo</div>
+            <div class="logo-naranja center height100">Rest</div>
                 <form method="POST" class="form-login" action="{{ route('register') }}">
                     @csrf
                     <h3>Datos de empresa</h3>
