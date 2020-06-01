@@ -131,6 +131,7 @@ class PlatoController extends Controller
         foreach ($plato->ingredientes as $ingrediente){
             $plato->ingredientes()->detach($ingrediente->id);
         }
+
         Plato::destroy($id);
         return redirect(route("platos.index"));
     }

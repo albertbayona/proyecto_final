@@ -21,33 +21,31 @@
             <div class="th">Acciones</div>
 
             <div class="espacio-blanco"></div>
-
             @foreach($proveedores as $proveedor)
-
                 <div class="td">{{$proveedor->nombre}}</div>
                 <div class="td">{{$proveedor->empresa}}</div>
                 <div class="td">{{$proveedor->email}}</div>
                 <div class="td acciones">
                     <div class="link tooltip">
                         <span class="tooltiptext">Ver</span>
-                        <a href="{{route('proveedores.show',['proveedor' => $proveedor->id])}}"></a>
+                        <a href="{{route('proveedores.show',['proveedore' => $proveedor->id])}}"></a>
                         @svg('/svg/interface.svg', 'accion-svg')
                     </div>
                     <div class="link tooltip">
                         <span class="tooltiptext">Editar</span>
-                        <a href="{{route('proveedores.edit',['proveedor' => $proveedor->id])}}"></a>
+                        <a href="{{route('proveedores.edit',['proveedore' => $proveedor->id])}}"></a>
                         @svg('/svg/tool.svg', 'accion-svg')
                     </div>
                     <div class="borrar">
                         <a class="borrar-input tooltip"
-                           href="{{ route('proveedores.destroy',['proveedor' => $proveedor->id]) }}"
+                           href="{{ route('proveedores.destroy', $proveedor->id) }}"
                            onclick="event.preventDefault();
                                    document.getElementById('borrar-form{{$proveedor->id}}').submit();">
                             <span class="tooltiptext">Borrar</span>
                             @svg('/svg/delete.svg', 'accion-svg')
                         </a>
                         <form id="borrar-form{{$proveedor->id}}"
-                              action="{{ route('proveedores.destroy',['proveedor' => $proveedor->id]) }}" method="POST"
+                              action="{{ route('proveedores.destroy',$proveedor->id)}}" method="POST"
                               style="display: none;">
                             @csrf
                             @method('DELETE')

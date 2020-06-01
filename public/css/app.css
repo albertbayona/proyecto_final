@@ -727,6 +727,58 @@ a:visited {
 .grid-menu-ingredientes { grid-area: 3 / 1 / 4 / 4; }
 
 .grid-menu-ingrediente { grid-area: 2 / 2 / 3 / 4; }
+
+/**********GRID PROVEEDORES**************/
+.grid-proveedores-grid-container {
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    grid-template-rows: 1fr 3.5fr 1fr;
+    gap: 20px 20px;
+}
+
+.grid-proveedores-titulo { grid-area: 1 / 1 / 2 / 3; }
+
+.grid-proveedores-end-form {
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    grid-template-rows: 1fr;
+    gap: 20px 20px;
+    grid-area: 3 / 1 / 4 / 3;
+}
+
+.grid-proveedores-boton { grid-area: 1 / 1 / 2 / 2; }
+
+.grid-proveedores-imagen {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    gap: 20px 20px;
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.grid-proveedores-foto { grid-area: 2 / 1 / 3 / 4; }
+
+.grid-proveedores-subir-foto { grid-area: 3 / 1 / 4 / 4; }
+
+.grid-proveedores-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 2fr;
+    gap: 20px 20px;
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.grid-proveedores-nombre { grid-area: 2 / 1 / 3 / 3; }
+
+.grid-proveedores-empresa { grid-area: 2 / 3 / 3 / 4; }
+
+.grid-proveedores-email { grid-area: 4 / 1 / 5 / 3; }
+
+.grid-proveedores-telefono { grid-area: 4 / 3 / 5 / 4; }
+
+.grid-proveedores-datos-empleado { grid-area: 1 / 1 / 2 / 4; }
+
+.grid-proveedores-datos-contacto { grid-area: 3 / 1 / 4 / 4; }
 /********TOOLTIP**********/
 .tooltip {
     position: relative;

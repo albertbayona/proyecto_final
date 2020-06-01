@@ -8,8 +8,15 @@ class Proveedor extends Model
 {
     //
     protected $table = 'proveedores';
+    protected $fillable = [
+        'nombre',
+        'empresa',
+        'telefono',
+        'email',
+        'establecimiento_id'
+    ];
 
-    public function producto()
+    public function productos()
     {
         return $this->hasMany('App\Producto');
     }

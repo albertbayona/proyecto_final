@@ -29,7 +29,7 @@
                         <div class="grid-d-contacto text-abajo"><h3>Datos de usuario</h3></div>
                         <div class="grid-email direction-column">
                             <label for="email">Email</label>
-                            <input type="text" name="email" id="email" value="{{$user->email}}">
+                            <input type="email" name="email" id="email" value="{{$user->email}}">
                         </div>
                         <div class="grid-contrasenya  direction-column">
                             <label for="contrasenya">Contraseña</label>

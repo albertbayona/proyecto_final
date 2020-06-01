@@ -20,11 +20,11 @@
                         </div>
                         <div class="grid-establecimiento-nombre direction-column">
                             <label for="nombre">Nombre del establecimiento</label>
-                            <input type="text" name="nombre" id="nombre" value="{{$establecimiento->nombre}}">
+                            <input disabled type="text" name="nombre" id="nombre" value="{{$establecimiento->nombre}}">
                         </div>
                         <div class="grid-establecimiento-mesas direction-column">
                             <label for="mesas">Mesas</label>
-                            <input type="number" name="mesas" id="mesas" value="{{$establecimiento->mesas}}">
+                            <input disabled type="number" name="mesas" id="mesas" value="{{$establecimiento->mesas}}">
                         </div>
                     </div>
                     <div class="grid-establecimiento-datos-direccion1">
@@ -33,25 +33,25 @@
                         </div>
                         <div class="grid-establecimiento-pais direction-column">
                             <label for="pais">Pais</label>
-                            <input type="text" name="pais" id="pais" value="{{$establecimiento->pais}}">
+                            <input disabled type="text" name="pais" id="pais" value="{{$establecimiento->pais}}">
                         </div>
                         <div class="grid-establecimiento-provincia direction-column">
                             <label for="provincia">Provincia</label>
-                            <input type="text" name="provincia" id="provincia" value="{{$establecimiento->provincia}}">
+                            <input disabled type="text" name="provincia" id="provincia" value="{{$establecimiento->provincia}}">
                         </div>
                         <div class="grid-establecimiento-municipio direction-column">
                             <label for="municipio">Municipio</label>
-                            <input type="text" name="municipio" id="municipio" value="{{$establecimiento->municipio}}">
+                            <input disabled type="text" name="municipio" id="municipio" value="{{$establecimiento->municipio}}">
                         </div>
                     </div>
                     <div class="grid-establecimiento-datos-direccion2">
                         <div class="grid-establecimiento-codigo-postal direction-column">
                             <label for="codigo_postal">Codigo postal</label>
-                            <input type="text" name="codigo_postal" id="codigo_postal" value="{{$establecimiento->codigo_postal}}" >
+                            <input disabled type="text" name="codigo_postal" id="codigo_postal" value="{{$establecimiento->codigo_postal}}" >
                         </div>
                         <div class="grid-establecimiento-calle direction-column">
                             <label for="calle">Calle</label>
-                            <input type="text" name="calle" id="calle" value="{{$establecimiento->calle}}" >
+                            <input disabled type="text" name="calle" id="calle" value="{{$establecimiento->calle}}" >
                         </div>
                     </div>
                 </div>

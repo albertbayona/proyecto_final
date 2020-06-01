@@ -22,11 +22,11 @@
                 <div class="grid-menu-form">
                     <div class="grid-menu-nombre direction-column">
                         <label for="nombre">Nombre</label>
-                        <input type="text" name="nombre" id="nombre" value="{{$plato->nombre}}">
+                        <input disabled type="text" name="nombre" id="nombre" value="{{$plato->nombre}}">
                     </div>
                     <div class="grid-menu-precio direction-column">
                         <label for="precio">Precio</label>
-                        <input type="text" name="precio" id="precio" value="{{$plato->precio}}">
+                        <input disabled type="text" name="precio" id="precio" value="{{$plato->precio}}">
                     </div>
                     <div class="grid-menu-categoria direction-column">
                         <label for="categoria">Categoría</label>
@@ -40,19 +40,9 @@
                             @endforeach
                         </select>
                     </div>
-{{--                    <div class="grid-menu-ingrediente direction-column">--}}
-{{--                        <label for="ingrediente">Buscar ingrediente</label>--}}
-{{--                        <select type="text" id="ingrediente" name="ingrediente" id="ingrediente" >--}}
-{{--                            <option value=""> ---</option>--}}
-{{--                        @foreach($productos as $producto)--}}
-{{--                            <option value="{{$producto->nombre}}">{{$producto->nombre}}</option>--}}
-{{--                        @endforeach--}}
-{{--                        </select>--}}
-{{--                    </div>--}}
-
                     <div class="grid-menu-ingredientes direction-column">
                         <label for="ingredientes">Ingredientes</label>
-                        <input type="text" id="ingredientes" name="ingredientes" id="ingredientes" value="{{$ingredientes}}" >
+                        <input disabled type="text" id="ingredientes" name="ingredientes" id="ingredientes" value="{{$ingredientes}}" >
                     </div>
 
                 </div>
