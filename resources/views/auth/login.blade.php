@@ -7,7 +7,7 @@
         <form method="POST" class="form-login" action="{{ route('login') }}">
             @csrf
             <div>
-                <label for="email" >{{ __('E-Mail Address') }}</label>
+                <label for="email" >Email</label>
                 <div >
                     <input id="email" type="email" class="width100 @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div>
-                <label for="password" >{{ __('Password') }}</label>
+                <label for="password" >Contraseña</label>
 
                 <div>
                     <input id="password" type="password" class="width100 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -31,22 +31,22 @@
                 </div>
             </div>
 
-            <div>
-                <div >
-                    <div >
-                        <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+{{--            <div>--}}
+{{--                <div >--}}
+{{--                    <div >--}}
+{{--                        <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>--}}
 
-                        <label for="remember">
-                            {{ __('Remember Me') }}
-                        </label>
-                    </div>
-                </div>
-            </div>
+{{--                        <label for="remember">--}}
+{{--                            {{ __('Remember Me') }}--}}
+{{--                        </label>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
 
             <div >
                 <div >
                     <button type="submit" class="btn-primary btn-login arriba20">
-                        {{ __('Login') }}
+                        Iniciar sesión
                     </button>
 
 {{--                    @if (Route::has('password.request'))--}}
