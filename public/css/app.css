@@ -308,7 +308,7 @@ a:visited {
 }
 .main-svg{
     margin-top: 5px;
-    height: 80%;
+    width: 80%;
     fill:var(--negro);
 }
 .text-center{
