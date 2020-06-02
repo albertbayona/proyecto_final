@@ -13,7 +13,7 @@ class EmpresaSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = Factory::create();
 
         DB::table('empresas')->insert([
             'nombre' => 'Bayona Corp.',
