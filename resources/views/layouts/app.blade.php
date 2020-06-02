@@ -27,24 +27,24 @@
         @else
             @if(Auth::user()->tieneRol("empresa"))
 
-            <li class="nav-item dropdown link">
+            <li class="nav-item dropdown link mediaquery-hide">
                 <a href="{{route("users.index")}}">Usuarios</a>
             </li>
-            <li class="nav-item dropdown link">
+            <li class="nav-item dropdown link mediaquery-hide">
                 <a href="{{route("establecimientos.index")}}">Establecimientos</a>
             </li>
-            <li class="nav-item dropdown link">
+            <li class="nav-item dropdown link mediaquery-hide">
                 <a href="{{route("configuracion")}}">Configuracion</a>
             </li>
             @elseif(Auth::user()->tieneRol("gestor"))
 
-            <li class="nav-item dropdown link">
+            <li class="nav-item dropdown link mediaquery-hide">
                 <a href="{{route("inventario.index")}}">Inventario</a>
             </li>
-            <li class="nav-item dropdown link">
+            <li class="nav-item dropdown link mediaquery-hide">
                 <a href="{{route("platos.index")}}">Menú</a>
             </li>
-            <li class="nav-item dropdown link">
+            <li class="nav-item dropdown link mediaquery-hide">
                 <a href="{{route("proveedores.index")}}">Proveedores</a>
             </li>
             @endif

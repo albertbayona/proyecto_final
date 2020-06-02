@@ -298,11 +298,18 @@ a:visited {
     grid-column-gap: 5vw;
     justify-content: center;
     align-content:center;
+
 }
 .main-btn{
     background-color: var(--naranja-claro-blanco);
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    gap: 1px 1px;
+    align-items: center;
+    justify-content: center;
     transition: 0.3s;
 }
+
 .main-btn:hover{
     transform: scale(1.2);
 }
@@ -821,4 +828,11 @@ a:visited {
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
+}
+@media only screen
+and (max-width : 768px) {
+    /* Styles here */
+    .mediaquery-hide{
+        display: none;
+    }
 }
