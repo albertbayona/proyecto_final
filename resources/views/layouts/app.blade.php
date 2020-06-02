@@ -13,7 +13,7 @@
         <div class="logo-blanco nav-logo link"><a href="{{ route('home') }}" class="logo-blanco nav-logo">Rest</a></div>
     @endguest
 <!-- Right Side Of Navbar -->
-    <ul class="derecha derechaM40 height100 height-c">
+    <ul class="head-derecha">
         <!-- Authentication Links -->
         @guest
             <li class="nav-item">

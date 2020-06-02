@@ -85,7 +85,13 @@ a:visited {
 .link{
     cursor: pointer;
 }
-
+.head-derecha{
+    margin-right:40px ;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 100%;
+}
 .navbar {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -288,8 +294,7 @@ a:visited {
 .main-menu{
     display: grid;
     height: 100%;
-    grid-template-columns: repeat(3,33vh);
-    grid-template-rows: 33vh;
+    grid-template-columns: repeat(3,25vw);
     grid-column-gap: 5vw;
     justify-content: center;
     align-content:center;
