@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->truncateTables([
+        /*$this->truncateTables([
             'roles',
             'empresas',
             'establecimientos',
@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             'proveedores',
             'productos',
             'ingredientes'
-        ]);
+        ]);*/
          $this->call([
              RolesSeeder::class,
              EmpresaSeeder::class,
