@@ -1,5 +1,6 @@
 <?php
 
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -13,7 +14,7 @@ class UserSeeder extends Seeder
     public function run()
     {
 //        $rolesIDs = DB::table('roles')->pluck('id');//array de roles
-        $faker = Faker\Factory::create();
+        $faker = Factory::create();
 
         DB::table('usuarios')->insert([
             'nombre' => 'Bayona Corp.',

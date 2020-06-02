@@ -13,7 +13,6 @@ class PlatoSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
 
         DB::table('platos')->insert([
             'nombre' => 'bocadillos de jamon',

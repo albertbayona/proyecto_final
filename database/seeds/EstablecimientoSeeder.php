@@ -13,7 +13,7 @@ class EstablecimientoSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = Factory::create();
 
         DB::table('establecimientos')->insert([
             'nombre' => 'Bar artero',

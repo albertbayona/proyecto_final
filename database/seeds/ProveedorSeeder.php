@@ -13,7 +13,7 @@ class ProveedorSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker\Factory::create();
+        $faker = Factory::create();
 
         DB::table('proveedores')->insert([
             'nombre' => 'Pepe garcia',
